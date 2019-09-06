@@ -1,7 +1,9 @@
 #ifndef PERFORMANCETEST_H
 #define PERFORMANCETEST_H
 
-#define N_TIME 1000000
+#include <stdint.h>
+
+#define N_TIME 100000000
 
 typedef void (*callback_function)(void);
 
@@ -9,7 +11,7 @@ class PerformanceTest
 {
 public:
 
-    static void run(int nTime, callback_function normalFunc = nullptr, callback_function optimizedFunc = nullptr);
+    static void run(callback_function normalFunc = nullptr, callback_function optimizedFunc = nullptr);
 
 };
 

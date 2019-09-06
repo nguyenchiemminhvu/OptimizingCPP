@@ -6,7 +6,8 @@ CONFIG -= qt
 SOURCES += main.cpp \
     timer.cpp \
     performancetest.cpp \
-    Examples/criticalstatements.cpp
+    Examples/criticalstatements.cpp \
+    Examples/bitwise.cpp
 
 HEADERS += \
     timer.h \

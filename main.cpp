@@ -3,8 +3,9 @@
 
 int main(int argc, char *argv[])
 {
-    PerformanceTest::run(N_TIME,
-                         Ex::Critical_Statements::Expressions::_1_Group_Constants_Together::normalFunc,
-                         Ex::Critical_Statements::Expressions::_1_Group_Constants_Together::optimizedFunc);
+    PerformanceTest::run(
+        Ex::Expressions::_4_Double_Maybe_Better_Than_Float::normalFunc,
+        Ex::Expressions::_4_Double_Maybe_Better_Than_Float::optimizedFunc
+    );
     return 0;
 }

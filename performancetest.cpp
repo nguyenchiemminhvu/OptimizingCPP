@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-void PerformanceTest::run(int nTime, callback_function normalFunc, callback_function optimizedFunc)
+void PerformanceTest::run(callback_function normalFunc, callback_function optimizedFunc)
 {
     GetTimer()->setType(Timer::DurationType::MILISECONDS);
 
@@ -13,7 +13,7 @@ void PerformanceTest::run(int nTime, callback_function normalFunc, callback_func
         std::cout << "Run normal function...... ";
         GetTimer()->start();
 
-        for (int i = 0; i < nTime; i++)
+        for (int64_t i = 0; i < N_TIME; i++)
         {
             normalFunc();
         }
@@ -26,7 +26,7 @@ void PerformanceTest::run(int nTime, callback_function normalFunc, callback_func
         std::cout << "Run optimized function... ";
         GetTimer()->start();
 
-        for (int i = 0; i < nTime; i++)
+        for (int64_t i = 0; i < N_TIME; i++)
         {
             optimizedFunc();
         }
