@@ -11,4 +11,4 @@ SOURCES += main.cpp \
 HEADERS += \
     timer.h \
     performancetest.h \
-    examples.h
+    Examples/examples.h
