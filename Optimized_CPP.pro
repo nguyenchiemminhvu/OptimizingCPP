@@ -7,7 +7,8 @@ SOURCES += main.cpp \
     timer.cpp \
     performancetest.cpp \
     Examples/criticalstatements.cpp \
-    Examples/bitwise.cpp
+    Examples/bitwise.cpp \
+    Examples/strings.cpp
 
 HEADERS += \
     timer.h \

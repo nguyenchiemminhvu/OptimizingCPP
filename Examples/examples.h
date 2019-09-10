@@ -36,17 +36,46 @@ namespace Ex
 
     namespace Control_Flows
     {
+        namespace _1_Prefer_Switch_To_Compare_Integer
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
 
+        namespace _2_Prefer_Virtual_Function
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
     }
 
     namespace Loops
     {
+        namespace _1_Cache_The_Loop_Value
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
 
+        namespace _2_Count_Down_Instead_Of_Up
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
+
+        namespace _3_Remove_Hidden_Function_Call
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
     }
 
     namespace Functions
     {
+        namespace _1_Grouping_Function_Arguments
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
 
+        namespace _2_Prefer_Return_Value_As_Output_Parameters
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
     }
 
     namespace Bitwise
@@ -64,7 +93,20 @@ namespace Ex
 
     namespace Strings
     {
+        namespace _1_Eliminate_Temporary_String_Objects
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
 
+        namespace _2_Eliminate_Return_String_Value
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
+
+        namespace _3_Use_Character_Arrays_Instead_Of_String
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
     }
 
     namespace Searching
@@ -87,12 +129,22 @@ namespace Ex
 
     }
 
-    namespace STL
+    namespace Data_Structures
     {
 
     }
 
     namespace Metaprogramming
+    {
+
+    }
+
+    namespace Use_Better_Libraries
+    {
+
+    }
+
+    namespace Use_Libraries_Better
     {
 
     }

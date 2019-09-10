@@ -6,7 +6,7 @@ namespace Ex
     {
         namespace _1_Check_Power_Of_Two
         {
-            inline bool checkPowerOfTwo_1(unsigned int value)
+            inline bool checkPowerOfTwo_Normal(unsigned int value)
             {
                 int countBitOne = 0;
                 while (value)
@@ -20,19 +20,19 @@ namespace Ex
                 return countBitOne == 1;
             }
 
-            inline bool checkPowerOfTwo_2(unsigned int value)
+            inline bool checkPowerOfTwo_Optimized(unsigned int value)
             {
                 return (value != 0) && !(value & (value - 1));
             }
 
             __NORMAL_FUNCTION
             {
-                bool isPowerOfTwo = checkPowerOfTwo_1(32);
+                bool isPowerOfTwo = checkPowerOfTwo_Normal(32);
             }
 
             __OPTIMIZED_FUNCTION
             {
-                bool isPowerOfTwo = checkPowerOfTwo_2(32);
+                bool isPowerOfTwo = checkPowerOfTwo_Optimized(32);
             }
         }
 

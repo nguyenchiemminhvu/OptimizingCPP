@@ -3,9 +3,10 @@
 
 int main(int argc, char *argv[])
 {
-    PerformanceTest::run(
-        Ex::Expressions::_4_Double_Maybe_Better_Than_Float::normalFunc,
-        Ex::Expressions::_4_Double_Maybe_Better_Than_Float::optimizedFunc
+    PerformanceTest::run(100000,
+        Ex::Strings::_3_Use_Character_Arrays_Instead_Of_String::normalFunc,
+        Ex::Strings::_3_Use_Character_Arrays_Instead_Of_String::optimizedFunc
     );
+
     return 0;
 }
