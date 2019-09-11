@@ -112,11 +112,6 @@ namespace Ex
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
-
-            namespace _2_Use_Better_Allocator
-            {
-                __DECLARE_FUNCTIONS_FOR_TEST
-            }
         }
 
         namespace _3_Use_Character_Arrays_Instead_Of_String

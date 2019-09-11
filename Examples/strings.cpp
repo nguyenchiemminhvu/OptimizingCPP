@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <string>
+#include <iostream>
 #include <algorithm>
 
 namespace Ex
@@ -154,19 +155,6 @@ namespace Ex
                 {
                     std::string s = remove_ctrl_append(temp);
                     //std::string s = remove_ctrl_erase(temp);
-                }
-            }
-
-            namespace _2_Use_Better_Allocator
-            {
-                __NORMAL_FUNCTION
-                {
-
-                }
-
-                __OPTIMIZED_FUNCTION
-                {
-
                 }
             }
         }
