@@ -8,7 +8,8 @@ SOURCES += main.cpp \
     performancetest.cpp \
     Examples/criticalstatements.cpp \
     Examples/bitwise.cpp \
-    Examples/strings.cpp
+    Examples/strings.cpp \
+    Examples/searching.cpp
 
 HEADERS += \
     timer.h \

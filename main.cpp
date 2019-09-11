@@ -4,8 +4,8 @@
 int main(int argc, char *argv[])
 {
     PerformanceTest::run(100000,
-        Ex::Strings::_2_Second_Attempt::_1_Use_Better_Algorithm::normalFunc,
-        Ex::Strings::_2_Second_Attempt::_1_Use_Better_Algorithm::optimizedFunc
+        Ex::Searching::_1_Use_STD_Map::normalFunc,
+        Ex::Searching::_1_Use_STD_Map::optimizedFunc
     );
 
     return 0;
