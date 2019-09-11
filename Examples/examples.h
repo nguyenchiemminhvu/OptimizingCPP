@@ -93,14 +93,30 @@ namespace Ex
 
     namespace Strings
     {
-        namespace _1_Eliminate_Temporary_String_Objects
+        namespace _1_First_Attempt
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+            namespace _1_Eliminate_Temporary_String_Objects
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _2_Eliminate_Return_String_Value
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
         }
 
-        namespace _2_Eliminate_Return_String_Value
+        namespace _2_Second_Attempt
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+            namespace _1_Use_Better_Algorithm
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _2_Use_Better_Allocator
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
         }
 
         namespace _3_Use_Character_Arrays_Instead_Of_String

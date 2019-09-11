@@ -9,85 +9,165 @@ namespace Ex
 {
     namespace Strings
     {
-        namespace _1_Eliminate_Temporary_String_Objects
+        namespace _1_First_Attempt
         {
-            std::string temp = "a b c d e";
-            std::string remove_ctrl(std::string s)
+            namespace _1_Eliminate_Temporary_String_Objects
             {
-                std::string result;
-                for (int i = 0; i < s.length(); i++)
+                std::string temp = "a b c d e";
+
+                std::string remove_ctrl(std::string s)
                 {
-                    if (s[i] >= 0x20)
-                        result = result + s[i];
+                    std::string result;
+                    for (int i = 0; i < s.length(); i++)
+                    {
+                        if (s[i] >= 0x20)
+                            result = result + s[i];
+                    }
+                    return result;
                 }
-                return result;
+
+                std::string remove_ctrl_2(std::string &s)
+                {
+                    std::string result;
+                    result.reserve(s.length());
+                    for (int i = 0; i < s.length(); i++)
+                    {
+                        if (s[i] >= 0x20)
+                        {
+                            result += s[i];
+                        }
+                    }
+                    return result;
+                }
+
+                __NORMAL_FUNCTION
+                {
+                    std::string s = remove_ctrl(temp);
+                }
+
+                __OPTIMIZED_FUNCTION
+                {
+                    std::string s = remove_ctrl_2(temp);
+                }
             }
 
-            std::string remove_ctrl_2(std::string &s)
+            namespace _2_Eliminate_Return_String_Value
             {
-                std::string result;
-                result.reserve(s.length());
-                for (int i = 0; i < s.length(); i++)
+                std::string temp = "a b c d e";
+
+                std::string remove_ctrl_2(std::string &s)
                 {
-                    if (s[i] >= 0x20)
+                    std::string result;
+                    result.reserve(s.length());
+                    for (int i = 0; i < s.length(); i++)
                     {
-                        result += s[i];
+                        if (s[i] >= 0x20)
+                        {
+                            result += s[i];
+                        }
+                    }
+                    return result;
+                }
+
+                void remove_ctrl_non_return(std::string &s, const std::string &temp)
+                {
+                    s.clear();
+                    s.reserve(temp.length());
+                    for (int i = 0; i < temp.length(); i++)
+                    {
+                        if (temp[i] >= 0x20)
+                        {
+                            s += temp[i];
+                        }
                     }
                 }
-                return result;
-            }
 
-            __NORMAL_FUNCTION
-            {
-                std::string s = remove_ctrl(temp);
-            }
+                __NORMAL_FUNCTION
+                {
+                    std::string s = remove_ctrl_2(temp);
+                }
 
-            __OPTIMIZED_FUNCTION
-            {
-                std::string s = remove_ctrl_2(temp);
+                __OPTIMIZED_FUNCTION
+                {
+                    std::string s;
+                    remove_ctrl_non_return(s, temp);
+                }
             }
         }
 
-        namespace _2_Eliminate_Return_String_Value
+        namespace _2_Second_Attempt
         {
-            std::string temp = "a b c d e";
-
-            std::string remove_ctrl_2(std::string &s)
+            namespace _1_Use_Better_Algorithm
             {
-                std::string result;
-                result.reserve(s.length());
-                for (int i = 0; i < s.length(); i++)
+                std::string temp = "a b c d e";
+
+                std::string remove_ctrl(std::string s)
                 {
-                    if (s[i] >= 0x20)
+                    std::string result;
+                    result.reserve(s.length());
+                    for (int i = 0; i < s.length(); i++)
                     {
-                        result += s[i];
+                        if (s[i] >= 0x20)
+                            result = result + s[i];
                     }
+                    return result;
                 }
-                return result;
-            }
 
-            void remove_ctrl_non_return(std::string &s, const std::string &temp)
-            {
-                s.clear();
-                s.reserve(temp.length());
-                for (int i = 0; i < temp.length(); i++)
+                std::string remove_ctrl_append(std::string s)
                 {
-                    if (temp[i] >= 0x20)
+                    std::string result;
+                    result.reserve(s.length());
+                    for (size_t i = 0, j = i; i < s.length(); i++)
                     {
-                        s += temp[i];
+                        for (j = i; j < s.length(); j++)
+                        {
+                            if (s[j] < 0x20)
+                                break;
+                        }
+                        result.append(s, i, j - i);
                     }
+                    return result;
+                }
+
+                std::string remove_ctrl_erase(std::string s)
+                {
+                    for (size_t i = 0; i < s.length(); )
+                    {
+                        if (s[i] < 0x20)
+                        {
+                            s.erase(i, 1);
+                        }
+                        else
+                        {
+                            i++;
+                        }
+                    }
+                    return s;
+                }
+
+                __NORMAL_FUNCTION
+                {
+                    std::string s = remove_ctrl(temp);
+                }
+
+                __OPTIMIZED_FUNCTION
+                {
+                    std::string s = remove_ctrl_append(temp);
+                    //std::string s = remove_ctrl_erase(temp);
                 }
             }
 
-            __NORMAL_FUNCTION
+            namespace _2_Use_Better_Allocator
             {
-                std::string s = remove_ctrl_2(temp);
-            }
+                __NORMAL_FUNCTION
+                {
 
-            __OPTIMIZED_FUNCTION
-            {
-                std::string s;
-                remove_ctrl_non_return(s, temp);
+                }
+
+                __OPTIMIZED_FUNCTION
+                {
+
+                }
             }
         }
 
