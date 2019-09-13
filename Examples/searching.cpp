@@ -12,10 +12,29 @@ namespace Ex
     {
         namespace _1_Use_STD_Map
         {
+            std::map<std::string, int> map_1;
+
             __NORMAL_FUNCTION
             {
 
             }
+
+            template <int N = 10, typename T = char>
+            class charbuf
+            {
+                T _data[N];
+            public:
+                charbuf() {}
+                charbuf(const charbuf &cb) {}
+                charbuf& operator=(const charbuf& cb) {}
+                bool operator==(const charbuf& cb) const {return true;}
+                bool operator<(const charbuf& cb) const {return true;}
+            };
+
+            template <int N = 10, typename T = char>
+            bool operator<(const charbuf<N, T>& cb1, const charbuf<N, T>& cb2) {return true;}
+
+            std::map<charbuf<>, int> map_2;
 
             __OPTIMIZED_FUNCTION
             {
