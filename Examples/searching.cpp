@@ -16,7 +16,11 @@ namespace Ex
 
             __NORMAL_FUNCTION
             {
-
+                map_1["111"] = 1;
+                map_1["222"] = 2;
+                map_1["333"] = 3;
+                map_1["444"] = 4;
+                map_1["555"] = 5;
             }
 
             template <int N = 10, typename T = char>
@@ -25,20 +29,25 @@ namespace Ex
                 T _data[N];
             public:
                 charbuf() {}
-                charbuf(const charbuf &cb) {}
-                charbuf& operator=(const charbuf& cb) {}
-                bool operator==(const charbuf& cb) const {return true;}
-                bool operator<(const charbuf& cb) const {return true;}
+                charbuf(const char *c) { strcpy(_data, c); }
+                charbuf(const charbuf &cb) { strcpy(_data, cb._data); }
+                charbuf& operator=(const charbuf& cb) { strcpy(_data, cb._data); }
+                bool operator==(const charbuf& cb) const { return strcmp(_data, cb._data) == 0; }
+                bool operator<(const charbuf& cb) const { return strcmp(_data, cb._data) < 0; }
             };
 
             template <int N = 10, typename T = char>
-            bool operator<(const charbuf<N, T>& cb1, const charbuf<N, T>& cb2) {return true;}
+            bool operator<(const charbuf<N, T>& cb1, const charbuf<N, T>& cb2) {return strcmp(cb1._data, cb2._data) < 0;}
 
             std::map<charbuf<>, int> map_2;
 
             __OPTIMIZED_FUNCTION
             {
-
+                map_2["111"] = 1;
+                map_2["222"] = 2;
+                map_2["333"] = 3;
+                map_2["444"] = 4;
+                map_2["555"] = 5;
             }
         }
 
