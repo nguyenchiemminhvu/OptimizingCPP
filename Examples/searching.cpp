@@ -1,8 +1,10 @@
 #include "examples.h"
+#include "timer.h"
 
 #include <stdlib.h>
 #include <string.h>
 #include <map>
+#include <unordered_map>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -11,7 +13,7 @@ namespace Ex
 {
     namespace Searching
     {
-        namespace _1_Use_STD_Map
+        namespace _1_Change_Data_Structure_Representing_Keys
         {
             std::map<std::string, int> map_1;
 
@@ -79,29 +81,48 @@ namespace Ex
             }
         }
 
-        namespace _2_Use_Algorithm_Header
+        namespace _2_Optimize_In_Hashed_KeyValue_Tables
         {
+            std::map<std::string, int> map_1;
+
             __NORMAL_FUNCTION
             {
+                map_1["111"] = 1;
+                map_1["222"] = 2;
+                map_1["333"] = 3;
+                map_1["444"] = 4;
+                map_1["555"] = 5;
 
+                std::map<std::string, int>::iterator iter = map_1.find("555");
+                if (iter != map_1.end())
+                {
+                    //std::cout << "found" << std::endl;
+                }
+                else
+                {
+                    //std::cout << "not found" << std::endl;
+                }
             }
+
+            std::unordered_map<std::string, int> map_2;
 
             __OPTIMIZED_FUNCTION
             {
+                map_2["111"] = 1;
+                map_2["222"] = 2;
+                map_2["333"] = 3;
+                map_2["444"] = 4;
+                map_2["555"] = 5;
 
-            }
-        }
-
-        namespace _3_Optimize_In_Hashed_KeyValue_Tables
-        {
-            __NORMAL_FUNCTION
-            {
-
-            }
-
-            __OPTIMIZED_FUNCTION
-            {
-
+                std::unordered_map<std::string, int>::iterator iter = map_2.find("555");
+                if (iter != map_2.end())
+                {
+                    //std::cout << "found" << std::endl;
+                }
+                else
+                {
+                    //std::cout << "not found" << std::endl;
+                }
             }
         }
     }

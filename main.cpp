@@ -3,9 +3,9 @@
 
 int main(int argc, char *argv[])
 {
-    PerformanceTest::run(100000,
-        Ex::Searching::_1_Use_STD_Map::normalFunc,
-        Ex::Searching::_1_Use_STD_Map::optimizedFunc
+    PerformanceTest::run(1000000,
+        Ex::Searching::_2_Optimize_In_Hashed_KeyValue_Tables::normalFunc,
+        Ex::Searching::_2_Optimize_In_Hashed_KeyValue_Tables::optimizedFunc
     );
 
     return 0;

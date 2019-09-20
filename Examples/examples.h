@@ -122,25 +122,15 @@ namespace Ex
 
     namespace Searching
     {
-        namespace _1_Use_STD_Map
+        namespace _1_Change_Data_Structure_Representing_Keys
         {
             __DECLARE_FUNCTIONS_FOR_TEST
         }
 
-        namespace _2_Use_Algorithm_Header
+        namespace _2_Optimize_In_Hashed_KeyValue_Tables
         {
             __DECLARE_FUNCTIONS_FOR_TEST
         }
-
-        namespace _3_Optimize_In_Hashed_KeyValue_Tables
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
-    }
-
-    namespace Sorting
-    {
-
     }
 
     namespace Input_And_Output
