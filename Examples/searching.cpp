@@ -17,15 +17,31 @@ namespace Ex
     {
         namespace _1_Change_Data_Structure_Representing_Keys
         {
-            std::map<std::string, int> map_1;
+            std::map<std::string, int> createMap_1()
+            {
+                std::map<std::string, int> _map;
+                _map["111"] = 1;
+                _map["222"] = 2;
+                _map["333"] = 3;
+                _map["444"] = 4;
+                _map["555"] = 5;
+                return _map;
+            }
+
+            std::map<std::string, int> map_1 = createMap_1();
+            std::map<std::string, int>::iterator Iter_1;
 
             __NORMAL_FUNCTION
             {
-                map_1["111"] = 1;
-                map_1["222"] = 2;
-                map_1["333"] = 3;
-                map_1["444"] = 4;
-                map_1["555"] = 5;
+                Iter_1 = map_1.find("555");
+                if (Iter_1 != map_1.end())
+                {
+                    //std::cout << "Found" << std::endl;
+                }
+                else
+                {
+                    //std::cout << "Not found" << std::endl;
+                }
             }
 
             template <int N = 10, typename T = char>
@@ -44,15 +60,31 @@ namespace Ex
             template <int N = 10, typename T = char>
             bool operator<(const charbuf<N, T>& cb1, const charbuf<N, T>& cb2) {return strcmp(cb1._data, cb2._data) < 0;}
 
-            std::map<charbuf<>, int> map_2;
+            std::map<charbuf<>, int> createMap_2()
+            {
+                std::map<charbuf<>, int> _map;
+                _map["111"] = 1;
+                _map["222"] = 2;
+                _map["333"] = 3;
+                _map["444"] = 4;
+                _map["555"] = 5;
+                return _map;
+            }
+
+            std::map<charbuf<>, int> map_2 = createMap_2();
+            std::map<charbuf<>, int>::iterator Iter_2;
 
             __OPTIMIZED_FUNCTION_1
             {
-                map_2["111"] = 1;
-                map_2["222"] = 2;
-                map_2["333"] = 3;
-                map_2["444"] = 4;
-                map_2["555"] = 5;
+                Iter_2 = map_2.find("555");
+                if (Iter_2 != map_2.end())
+                {
+                    //std::cout << "Found" << std::endl;
+                }
+                else
+                {
+                    //std::cout << "Not found" << std::endl;
+                }
             }
 
             bool compare_less_ptr(const char* ptr1, const char* ptr2)
@@ -143,19 +175,9 @@ namespace Ex
                     //std::cout << "Not found" << std::endl;
                 }
             }
-
-            __OPTIMIZED_FUNCTION_2
-            {
-
-            }
-
-            __OPTIMIZED_FUNCTION_3
-            {
-
-            }
         }
 
-        namespace _5_Optimize_Search_In_Hashed_Tables
+        namespace _3_Optimize_Search_In_Hashed_Tables
         {
             std::map<std::string, int> createMap_1()
             {

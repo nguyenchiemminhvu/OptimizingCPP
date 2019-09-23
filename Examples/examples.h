@@ -143,7 +143,7 @@ namespace Ex
             __DECLARE_FUNCTIONS_FOR_TEST
         }
 
-        namespace _5_Optimize_Search_In_Hashed_Tables
+        namespace _3_Optimize_Search_In_Hashed_Tables
         {
             __DECLARE_FUNCTIONS_FOR_TEST
         }
