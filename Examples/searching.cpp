@@ -44,22 +44,31 @@ namespace Ex
             template <int N = 10, typename T = char>
             bool operator<(const charbuf<N, T>& cb1, const charbuf<N, T>& cb2) {return strcmp(cb1._data, cb2._data) < 0;}
 
-            //std::map<charbuf<>, int> map_2;
+            std::map<charbuf<>, int> map_2;
 
-            bool compare_less_ptr(const char* ptr1, const char* ptr2)
-            {
-                return strcmp(ptr1, ptr2) < 0;
-            }
-
-            std::map<const char*, int, bool(*)(const char*, const char*)> map_2(compare_less_ptr);
-
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 map_2["111"] = 1;
                 map_2["222"] = 2;
                 map_2["333"] = 3;
                 map_2["444"] = 4;
                 map_2["555"] = 5;
+            }
+
+            bool compare_less_ptr(const char* ptr1, const char* ptr2)
+            {
+                return strcmp(ptr1, ptr2) < 0;
+            }
+
+            std::map<const char*, int, bool(*)(const char*, const char*)> map_3(compare_less_ptr);
+
+            __OPTIMIZED_FUNCTION_2
+            {
+                map_3["111"] = 1;
+                map_3["222"] = 2;
+                map_3["333"] = 3;
+                map_3["444"] = 4;
+                map_3["555"] = 5;
             }
         }
 
@@ -102,9 +111,11 @@ namespace Ex
                 KeyValue(const KeyValue &kv) { key = kv.key; value = kv.value; }
 
                 bool operator == (const KeyValue &kv) { return strcmp(key, kv.key) == 0; }
+                bool operator < (const KeyValue &kv) { return strcmp(key, kv.key) < 0; }
             };
 
             bool operator == (const KeyValue &kv1, const KeyValue &kv2) { return strcmp(kv1.key, kv2.key) == 0; }
+            bool operator < (const KeyValue &kv1, const KeyValue &kv2) { return strcmp(kv1.key, kv2.key) < 0; }
 
             std::vector<KeyValue> createVec_1()
             {
@@ -120,7 +131,7 @@ namespace Ex
             std::vector<KeyValue> vec_1 = createVec_1();
             std::vector<KeyValue>::iterator VecIter;
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 VecIter = std::find(vec_1.begin(), vec_1.end(), KeyValue("555", 5));
                 if (VecIter != vec_1.end())
@@ -131,6 +142,16 @@ namespace Ex
                 {
                     //std::cout << "Not found" << std::endl;
                 }
+            }
+
+            __OPTIMIZED_FUNCTION_2
+            {
+
+            }
+
+            __OPTIMIZED_FUNCTION_3
+            {
+
             }
         }
 
@@ -175,7 +196,7 @@ namespace Ex
 
             std::unordered_map<std::string, int> map_2;
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 std::unordered_map<std::string, int>::iterator iter = map_2.find("555");
                 if (iter != map_2.end())

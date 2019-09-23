@@ -27,6 +27,11 @@ namespace Ex
                     return result;
                 }
 
+                __NORMAL_FUNCTION
+                {
+                    std::string s = remove_ctrl(temp);
+                }
+
                 std::string remove_ctrl_2(std::string &s)
                 {
                     std::string result;
@@ -41,12 +46,8 @@ namespace Ex
                     return result;
                 }
 
-                __NORMAL_FUNCTION
-                {
-                    std::string s = remove_ctrl(temp);
-                }
 
-                __OPTIMIZED_FUNCTION
+                __OPTIMIZED_FUNCTION_1
                 {
                     std::string s = remove_ctrl_2(temp);
                 }
@@ -70,6 +71,11 @@ namespace Ex
                     return result;
                 }
 
+                __NORMAL_FUNCTION
+                {
+                    std::string s = remove_ctrl_2(temp);
+                }
+
                 void remove_ctrl_non_return(std::string &s, const std::string &temp)
                 {
                     s.clear();
@@ -83,12 +89,7 @@ namespace Ex
                     }
                 }
 
-                __NORMAL_FUNCTION
-                {
-                    std::string s = remove_ctrl_2(temp);
-                }
-
-                __OPTIMIZED_FUNCTION
+                __OPTIMIZED_FUNCTION_1
                 {
                     std::string s;
                     remove_ctrl_non_return(s, temp);
@@ -114,6 +115,11 @@ namespace Ex
                     return result;
                 }
 
+                __NORMAL_FUNCTION
+                {
+                    std::string s = remove_ctrl(temp);
+                }
+
                 std::string remove_ctrl_append(std::string s)
                 {
                     std::string result;
@@ -128,6 +134,11 @@ namespace Ex
                         result.append(s, i, j - i);
                     }
                     return result;
+                }
+
+                __OPTIMIZED_FUNCTION_1
+                {
+                    std::string s = remove_ctrl_append(temp);
                 }
 
                 std::string remove_ctrl_erase(std::string s)
@@ -146,15 +157,9 @@ namespace Ex
                     return s;
                 }
 
-                __NORMAL_FUNCTION
+                __OPTIMIZED_FUNCTION_2
                 {
-                    std::string s = remove_ctrl(temp);
-                }
-
-                __OPTIMIZED_FUNCTION
-                {
-                    std::string s = remove_ctrl_append(temp);
-                    //std::string s = remove_ctrl_erase(temp);
+                    std::string s = remove_ctrl_erase(temp);
                 }
             }
         }
@@ -178,6 +183,11 @@ namespace Ex
                 }
             }
 
+            __NORMAL_FUNCTION
+            {
+                remove_ctrl_non_return(s1, temp);
+            }
+
             void remove_ctrl_cstrings(char *des, const char *src, size_t size)
             {
                 for (size_t i = 0; i < size; i++)
@@ -190,12 +200,7 @@ namespace Ex
                 *des = '\0';
             }
 
-            __NORMAL_FUNCTION
-            {
-                remove_ctrl_non_return(s1, temp);
-            }
-
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 remove_ctrl_cstrings(s2, temp.data(), temp.length());
             }

@@ -3,11 +3,22 @@
 
 #define __DECLARE_FUNCTIONS_FOR_TEST \
 void normalFunc(); \
-void optimizedFunc();
+void optimized_1(); \
+void optimized_2(); \
+void optimized_3(); \
+void optimized_4(); \
+void optimized_5(); \
+void optimized_6(); \
+void optimized_7(); \
 
 #define __NORMAL_FUNCTION void normalFunc()
-
-#define __OPTIMIZED_FUNCTION void optimizedFunc()
+#define __OPTIMIZED_FUNCTION_1 void optimized_1()
+#define __OPTIMIZED_FUNCTION_2 void optimized_2()
+#define __OPTIMIZED_FUNCTION_3 void optimized_3()
+#define __OPTIMIZED_FUNCTION_4 void optimized_4()
+#define __OPTIMIZED_FUNCTION_5 void optimized_5()
+#define __OPTIMIZED_FUNCTION_6 void optimized_6()
+#define __OPTIMIZED_FUNCTION_7 void optimized_7()
 
 namespace Ex
 {

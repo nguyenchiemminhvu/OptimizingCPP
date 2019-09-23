@@ -20,17 +20,17 @@ namespace Ex
                 return countBitOne == 1;
             }
 
-            inline bool checkPowerOfTwo_Optimized(unsigned int value)
-            {
-                return (value != 0) && !(value & (value - 1));
-            }
-
             __NORMAL_FUNCTION
             {
                 bool isPowerOfTwo = checkPowerOfTwo_Normal(32);
             }
 
-            __OPTIMIZED_FUNCTION
+            inline bool checkPowerOfTwo_Optimized(unsigned int value)
+            {
+                return (value != 0) && !(value & (value - 1));
+            }
+
+            __OPTIMIZED_FUNCTION_1
             {
                 bool isPowerOfTwo = checkPowerOfTwo_Optimized(32);
             }
@@ -44,7 +44,7 @@ namespace Ex
                 a++;
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 int a = 0;
                 a = (-(~a));

@@ -19,7 +19,7 @@ namespace Ex
                 int seconds = 24 * days * 60 * 60;
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 int days = 1000;
                 int seconds = days * 24 * 60 * 60;
@@ -34,7 +34,7 @@ namespace Ex
                 x = x * 9;
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 int x = 100;
                 x = x << 3 + x;
@@ -50,7 +50,7 @@ namespace Ex
                 unsigned int test = (unsigned int)round((double)numerator / denominator);
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 unsigned int numerator = 100;
                 unsigned int denominator = 10;
@@ -58,8 +58,14 @@ namespace Ex
                 unsigned int q = numerator / denominator;
                 unsigned int r = numerator % denominator;
                 unsigned int test = (r >= (denominator >> 1)) ? q + 1 : q;
+            }
 
-                //unsigned int test = (numerator + (denominator >> 1)) / denominator;
+            __OPTIMIZED_FUNCTION_2
+            {
+                unsigned int numerator = 100;
+                unsigned int denominator = 10;
+
+                unsigned int test = (numerator + (denominator >> 1)) / denominator;
             }
         }
 
@@ -71,7 +77,7 @@ namespace Ex
                 d = a*t*t + v0*t + d0;
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 float d, t, a = -9.8f, v0 = 0.0f, d0 = 100.0f;
                 d = a*t*t + v0*t + d0;
@@ -96,7 +102,7 @@ namespace Ex
                 else if (n == 5) h();
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 int n = 5;
 
@@ -170,7 +176,7 @@ namespace Ex
                 c.speak();
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 Dog d;
                 d.virtualSpeak();
@@ -195,7 +201,7 @@ namespace Ex
                 }
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 char s[] = "This string has many space chars";
                 for (size_t i = 0, len = strlen(s); i < len; i++)
@@ -218,7 +224,7 @@ namespace Ex
                 }
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 char s[] = "This string has many space chars";
                 for (int i = strlen(s) - 1; i >= 0; i--)
@@ -241,7 +247,7 @@ namespace Ex
                 // 133s
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 std::string s;
                 for (int i = 0; i < 3; i++)
@@ -282,7 +288,7 @@ namespace Ex
                 f1(i, a1, a2, a3, a4, a5, a6, a7, a8);
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 f2(c);
             }
@@ -313,7 +319,7 @@ namespace Ex
                 S s = f1(1, 2);
             }
 
-            __OPTIMIZED_FUNCTION
+            __OPTIMIZED_FUNCTION_1
             {
                 S s;
                 f2(s, 1, 2);
