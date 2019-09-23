@@ -127,7 +127,12 @@ namespace Ex
             __DECLARE_FUNCTIONS_FOR_TEST
         }
 
-        namespace _2_Optimize_In_Hashed_KeyValue_Tables
+        namespace _2_Search_In_Sequence_Container
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
+
+        namespace _5_Optimize_Search_In_Hashed_Tables
         {
             __DECLARE_FUNCTIONS_FOR_TEST
         }

@@ -8,6 +8,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <set>
+#include <array>
 
 namespace Ex
 {
@@ -24,16 +26,6 @@ namespace Ex
                 map_1["333"] = 3;
                 map_1["444"] = 4;
                 map_1["555"] = 5;
-
-                std::map<std::string, int>::iterator iter = map_1.find("555");
-                if (iter != map_1.end())
-                {
-                    //std::cout << "found" << std::endl;
-                }
-                else
-                {
-                    //std::cout << "not found" << std::endl;
-                }
             }
 
             template <int N = 10, typename T = char>
@@ -68,7 +60,97 @@ namespace Ex
                 map_2["333"] = 3;
                 map_2["444"] = 4;
                 map_2["555"] = 5;
+            }
+        }
 
+        namespace _2_Search_In_Sequence_Container
+        {
+            std::map<std::string, int> createMap_1()
+            {
+                std::map<std::string, int> _map;
+                _map["111"] = 1;
+                _map["222"] = 2;
+                _map["333"] = 3;
+                _map["444"] = 4;
+                _map["555"] = 5;
+                return _map;
+            }
+
+            std::map<std::string, int> map_1 = createMap_1();
+            std::map<std::string, int>::iterator MapIter;
+
+            __NORMAL_FUNCTION
+            {
+                MapIter = map_1.find("555");
+                if (MapIter != map_1.end())
+                {
+                    //std::cout << "Found" << std::endl;
+                }
+                else
+                {
+                    //std::cout << "Not found" << std::endl;
+                }
+            }
+
+            struct KeyValue
+            {
+                const char* key;
+                int value;
+
+                KeyValue() {}
+                KeyValue(const char *k, int v) { key = k; value = v; }
+                KeyValue(const KeyValue &kv) { key = kv.key; value = kv.value; }
+
+                bool operator == (const KeyValue &kv) { return strcmp(key, kv.key) == 0; }
+            };
+
+            bool operator == (const KeyValue &kv1, const KeyValue &kv2) { return strcmp(kv1.key, kv2.key) == 0; }
+
+            std::vector<KeyValue> createVec_1()
+            {
+                std::vector<KeyValue> _set;
+                _set.push_back(KeyValue("111", 1));
+                _set.push_back(KeyValue("222", 2));
+                _set.push_back(KeyValue("333", 3));
+                _set.push_back(KeyValue("444", 4));
+                _set.push_back(KeyValue("555", 5));
+                return _set;
+            }
+
+            std::vector<KeyValue> vec_1 = createVec_1();
+            std::vector<KeyValue>::iterator VecIter;
+
+            __OPTIMIZED_FUNCTION
+            {
+                VecIter = std::find(vec_1.begin(), vec_1.end(), KeyValue("555", 5));
+                if (VecIter != vec_1.end())
+                {
+                    //std::cout << "Found" << std::endl;
+                }
+                else
+                {
+                    //std::cout << "Not found" << std::endl;
+                }
+            }
+        }
+
+        namespace _5_Optimize_Search_In_Hashed_Tables
+        {
+            std::map<std::string, int> createMap_1()
+            {
+                std::map<std::string, int> _map;
+                _map["111"] = 1;
+                _map["222"] = 2;
+                _map["333"] = 3;
+                _map["444"] = 4;
+                _map["555"] = 5;
+                return _map;
+            }
+
+            std::map<std::string, int> map_1 = createMap_1();
+
+            __NORMAL_FUNCTION
+            {
                 std::map<std::string, int>::iterator iter = map_1.find("555");
                 if (iter != map_1.end())
                 {
@@ -79,41 +161,22 @@ namespace Ex
                     //std::cout << "not found" << std::endl;
                 }
             }
-        }
 
-        namespace _2_Optimize_In_Hashed_KeyValue_Tables
-        {
-            std::map<std::string, int> map_1;
-
-            __NORMAL_FUNCTION
+            std::unordered_map<std::string, int> createMap_2()
             {
-                map_1["111"] = 1;
-                map_1["222"] = 2;
-                map_1["333"] = 3;
-                map_1["444"] = 4;
-                map_1["555"] = 5;
-
-                std::map<std::string, int>::iterator iter = map_1.find("555");
-                if (iter != map_1.end())
-                {
-                    //std::cout << "found" << std::endl;
-                }
-                else
-                {
-                    //std::cout << "not found" << std::endl;
-                }
+                std::unordered_map<std::string, int> _map;
+                _map["111"] = 1;
+                _map["222"] = 2;
+                _map["333"] = 3;
+                _map["444"] = 4;
+                _map["555"] = 5;
+                return _map;
             }
 
             std::unordered_map<std::string, int> map_2;
 
             __OPTIMIZED_FUNCTION
             {
-                map_2["111"] = 1;
-                map_2["222"] = 2;
-                map_2["333"] = 3;
-                map_2["444"] = 4;
-                map_2["555"] = 5;
-
                 std::unordered_map<std::string, int>::iterator iter = map_2.find("555");
                 if (iter != map_2.end())
                 {
