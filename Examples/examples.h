@@ -149,17 +149,20 @@ namespace Ex
         }
     }
 
+    namespace Data_Structures
+    {
+        namespace _1_
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
+    }
+
     namespace Input_And_Output
     {
 
     }
 
     namespace Memory_Management
-    {
-
-    }
-
-    namespace Data_Structures
     {
 
     }

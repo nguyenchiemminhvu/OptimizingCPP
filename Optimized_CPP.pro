@@ -9,7 +9,8 @@ SOURCES += main.cpp \
     Examples/criticalstatements.cpp \
     Examples/bitwise.cpp \
     Examples/strings.cpp \
-    Examples/searching.cpp
+    Examples/searching.cpp \
+    Examples/datastructures.cpp
 
 HEADERS += \
     timer.h \

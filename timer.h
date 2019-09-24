@@ -22,6 +22,7 @@ public:
     };
 
     void setType(DurationType type = DurationType::MILISECONDS);
+
     void start();
     void stop();
 
@@ -31,6 +32,7 @@ public:
 private:
 
     DurationType _type;
+
     clock_t _startTime;
     clock_t _endTime;
     duration_t _duration;
