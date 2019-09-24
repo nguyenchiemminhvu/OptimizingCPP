@@ -3,9 +3,9 @@
 
 int main(int argc, char *argv[])
 {
-    PerformanceTest::run(10000000,
-        Ex::Data_Structures::_1_::normalFunc,
-        Ex::Data_Structures::_1_::optimized_1
+    PerformanceTest::run(1000000,
+        Ex::Data_Structures::_1_Vector_And_String::normalFunc,
+        Ex::Data_Structures::_1_Vector_And_String::optimized_1
     );
 
     return 0;

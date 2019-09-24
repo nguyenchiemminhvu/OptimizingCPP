@@ -151,7 +151,37 @@ namespace Ex
 
     namespace Data_Structures
     {
-        namespace _1_
+        namespace _1_Vector_And_String
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
+
+        namespace _2_Deque
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
+
+        namespace _3_List
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
+
+        namespace _4_Forward_List
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
+
+        namespace _5_Map_And_Multimap
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
+
+        namespace _6_Set_And_Multiset
+        {
+            __DECLARE_FUNCTIONS_FOR_TEST
+        }
+
+        namespace _7_Other_Data_Structures
         {
             __DECLARE_FUNCTIONS_FOR_TEST
         }
