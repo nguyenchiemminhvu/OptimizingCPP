@@ -1,5 +1,9 @@
 #include "examples.h"
 
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <string>
 #include <vector>
 #include <list>
 #include <set>
@@ -11,10 +15,48 @@
 #include <deque>
 #include <algorithm>
 
+#define stringify(s) #s
+
 namespace Ex
 {
     namespace Data_Structures
     {
+        struct KeyValue
+        {
+            char _key[10];
+            int _value;
+
+            KeyValue()
+            {
+
+            }
+
+            KeyValue(const int &value)
+                : _value(value)
+            {
+                strcpy(_key, stringify(value));
+            }
+
+            KeyValue(const char *key, const int &value)
+                : _value(value)
+            {
+                strcpy(_key, key);
+            }
+
+            KeyValue & operator = (const KeyValue &kv)
+            {
+                if (this == &kv)
+                    return *this;
+
+                strcpy(_key, kv._key);
+                _value = kv._value;
+                return *this;
+            }
+
+            bool operator < (const KeyValue &kv) { return strcmp(_key, kv._key) < 0; }
+            bool operator == (const KeyValue &kv) { return strcmp(_key, kv._key) == 0; }
+        };
+
         namespace _1_Vector_And_String
         {
             __NORMAL_FUNCTION
@@ -81,19 +123,6 @@ namespace Ex
         }
 
         namespace _6_Set_And_Multiset
-        {
-            __NORMAL_FUNCTION
-            {
-
-            }
-
-            __OPTIMIZED_FUNCTION_1
-            {
-
-            }
-        }
-
-        namespace _7_Other_Data_Structures
         {
             __NORMAL_FUNCTION
             {

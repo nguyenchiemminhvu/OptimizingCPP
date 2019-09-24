@@ -180,11 +180,6 @@ namespace Ex
         {
             __DECLARE_FUNCTIONS_FOR_TEST
         }
-
-        namespace _7_Other_Data_Structures
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
     }
 
     namespace Input_And_Output
