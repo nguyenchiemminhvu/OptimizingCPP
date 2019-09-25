@@ -1,5 +1,8 @@
 #include "examples.h"
+#include "randomgenerator.h"
 
+#include <typeinfo>
+#include <time.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
@@ -14,6 +17,7 @@
 #include <queue>
 #include <deque>
 #include <algorithm>
+#include <iostream>
 
 #define stringify(s) #s
 
@@ -28,7 +32,6 @@ namespace Ex
 
             KeyValue()
             {
-
             }
 
             KeyValue(const int &value)

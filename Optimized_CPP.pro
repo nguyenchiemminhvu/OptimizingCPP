@@ -10,9 +10,11 @@ SOURCES += main.cpp \
     Examples/bitwise.cpp \
     Examples/strings.cpp \
     Examples/searching.cpp \
-    Examples/datastructures.cpp
+    Examples/datastructures.cpp \
+    randomgenerator.cpp
 
 HEADERS += \
     timer.h \
     performancetest.h \
-    Examples/examples.h
+    Examples/examples.h \
+    randomgenerator.h
