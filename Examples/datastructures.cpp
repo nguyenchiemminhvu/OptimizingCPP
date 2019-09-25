@@ -62,7 +62,7 @@ namespace Ex
 
         namespace _1_Vector_And_String
         {
-            namespace _1_Reallocation
+            namespace _1_Inserting_And_Deleting
             {
                 __NORMAL_FUNCTION
                 {
@@ -75,7 +75,7 @@ namespace Ex
                 }
             }
 
-            namespace _2_Inserting_And_Deleting
+            namespace _2_Iterating
             {
                 __NORMAL_FUNCTION
                 {
@@ -88,7 +88,7 @@ namespace Ex
                 }
             }
 
-            namespace _3_Iterating
+            namespace _3_Sorting
             {
                 __NORMAL_FUNCTION
                 {
@@ -101,20 +101,7 @@ namespace Ex
                 }
             }
 
-            namespace _4_Sorting
-            {
-                __NORMAL_FUNCTION
-                {
-
-                }
-
-                __OPTIMIZED_FUNCTION_1
-                {
-
-                }
-            }
-
-            namespace _5_Lookup
+            namespace _4_Lookup
             {
                 __NORMAL_FUNCTION
                 {
