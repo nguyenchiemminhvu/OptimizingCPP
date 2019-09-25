@@ -30,7 +30,7 @@ namespace Ex
                 return (value != 0) && !(value & (value - 1));
             }
 
-            __OPTIMIZED_FUNCTION_1
+            __OPTIMIZED_FUNCTION__
             {
                 bool isPowerOfTwo = checkPowerOfTwo_Optimized(32);
             }
@@ -44,7 +44,7 @@ namespace Ex
                 a++;
             }
 
-            __OPTIMIZED_FUNCTION_1
+            __OPTIMIZED_FUNCTION__
             {
                 int a = 0;
                 a = (-(~a));

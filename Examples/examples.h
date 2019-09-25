@@ -2,7 +2,8 @@
 #define EXAMPLES_H
 
 #define __DECLARE_FUNCTIONS_FOR_TEST \
-void normalFunc(); \
+void normalFunc();  \
+void optimized();   \
 void optimized_1(); \
 void optimized_2(); \
 void optimized_3(); \
@@ -11,7 +12,8 @@ void optimized_5(); \
 void optimized_6(); \
 void optimized_7(); \
 
-#define __NORMAL_FUNCTION void normalFunc()
+#define __NORMAL_FUNCTION      void normalFunc()
+#define __OPTIMIZED_FUNCTION__ void optimized()
 #define __OPTIMIZED_FUNCTION_1 void optimized_1()
 #define __OPTIMIZED_FUNCTION_2 void optimized_2()
 #define __OPTIMIZED_FUNCTION_3 void optimized_3()

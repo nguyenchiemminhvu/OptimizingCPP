@@ -6,6 +6,7 @@
 
 void PerformanceTest::run(int nTime,
                           callback_function normalFunc,
+                          callback_function optimized,
                           callback_function optimized_1,
                           callback_function optimized_2,
                           callback_function optimized_3,
@@ -24,6 +25,19 @@ void PerformanceTest::run(int nTime,
         for (int64_t i = 0; i < nTime; i++)
         {
             normalFunc();
+        }
+
+        GetTimer()->stop();
+    }
+
+    if (optimized)
+    {
+        std::cout << "Run optimized function....... ";
+        GetTimer()->start();
+
+        for (int64_t i = 0; i < nTime; i++)
+        {
+            optimized_1();
         }
 
         GetTimer()->stop();

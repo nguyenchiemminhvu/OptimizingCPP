@@ -10,7 +10,8 @@ class PerformanceTest
 public:
 
     static void run(int nTime,
-                    callback_function normalFunc = nullptr,
+                    callback_function normalFunc  = nullptr,
+                    callback_function optimized   = nullptr,
                     callback_function optimized_1 = nullptr,
                     callback_function optimized_2 = nullptr,
                     callback_function optimized_3 = nullptr,

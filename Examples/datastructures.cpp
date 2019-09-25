@@ -64,35 +64,41 @@ namespace Ex
         {
             namespace _1_Reallocation
             {
-                std::vector<int> createVec_1()
+                std::vector<KeyValue> createVec_1()
                 {
-                    std::vector<int> _vec;
+                    std::vector<KeyValue> _vec;
                     for (int i = 0; i < 10; i++)
                     {
-                        _vec.push_back(RANDOM());
+                        _vec.push_back(KeyValue(RANDOM()));
                     }
                     return _vec;
                 }
 
                 __NORMAL_FUNCTION
                 {
-                    std::vector<int> vec_1 = createVec_1();
+                    std::vector<KeyValue> vec_1 = createVec_1();
                 }
 
-                std::vector<int> createVec_2()
+                std::vector<KeyValue> createVec_2()
                 {
-                    std::vector<int> _vec;
+                    std::vector<KeyValue> _vec;
                     _vec.reserve(10);
                     for (int i = 0; i < 10; i++)
                     {
-                        _vec.push_back(RANDOM());
+                        _vec.push_back(KeyValue(RANDOM()));
                     }
                     return _vec;
                 }
 
+                __OPTIMIZED_FUNCTION__
+                {
+                    std::vector<KeyValue> vec_2 = createVec_2();
+                }
+
+                std::vector<KeyValue> temp = createVec_2();
                 __OPTIMIZED_FUNCTION_1
                 {
-                    std::vector<int> vec_2 = createVec_2();
+                    std::vector<KeyValue> vec_3 = temp;
                 }
             }
 
@@ -103,7 +109,7 @@ namespace Ex
 
                 }
 
-                __OPTIMIZED_FUNCTION_1
+                __OPTIMIZED_FUNCTION__
                 {
 
                 }
@@ -116,7 +122,7 @@ namespace Ex
 
                 }
 
-                __OPTIMIZED_FUNCTION_1
+                __OPTIMIZED_FUNCTION__
                 {
 
                 }
@@ -129,7 +135,7 @@ namespace Ex
 
                 }
 
-                __OPTIMIZED_FUNCTION_1
+                __OPTIMIZED_FUNCTION__
                 {
 
                 }
@@ -142,7 +148,7 @@ namespace Ex
 
                 }
 
-                __OPTIMIZED_FUNCTION_1
+                __OPTIMIZED_FUNCTION__
                 {
 
                 }

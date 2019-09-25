@@ -74,7 +74,7 @@ namespace Ex
             std::map<charbuf<>, int> map_2 = createMap_2();
             std::map<charbuf<>, int>::iterator Iter_2;
 
-            __OPTIMIZED_FUNCTION_1
+            __OPTIMIZED_FUNCTION__
             {
                 Iter_2 = map_2.find("555");
                 if (Iter_2 != map_2.end())
@@ -94,7 +94,7 @@ namespace Ex
 
             std::map<const char*, int, bool(*)(const char*, const char*)> map_3(compare_less_ptr);
 
-            __OPTIMIZED_FUNCTION_2
+            __OPTIMIZED_FUNCTION_1
             {
                 map_3["111"] = 1;
                 map_3["222"] = 2;
@@ -163,7 +163,7 @@ namespace Ex
             std::vector<KeyValue> vec_1 = createVec_1();
             std::vector<KeyValue>::iterator VecIter;
 
-            __OPTIMIZED_FUNCTION_1
+            __OPTIMIZED_FUNCTION__
             {
                 VecIter = std::find(vec_1.begin(), vec_1.end(), KeyValue("555", 5));
                 if (VecIter != vec_1.end())
@@ -218,7 +218,7 @@ namespace Ex
 
             std::unordered_map<std::string, int> map_2;
 
-            __OPTIMIZED_FUNCTION_1
+            __OPTIMIZED_FUNCTION__
             {
                 std::unordered_map<std::string, int>::iterator iter = map_2.find("555");
                 if (iter != map_2.end())

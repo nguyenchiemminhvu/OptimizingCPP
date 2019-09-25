@@ -47,7 +47,7 @@ namespace Ex
                 }
 
 
-                __OPTIMIZED_FUNCTION_1
+                __OPTIMIZED_FUNCTION__
                 {
                     std::string s = remove_ctrl_2(temp);
                 }
@@ -89,7 +89,7 @@ namespace Ex
                     }
                 }
 
-                __OPTIMIZED_FUNCTION_1
+                __OPTIMIZED_FUNCTION__
                 {
                     std::string s;
                     remove_ctrl_non_return(s, temp);
@@ -136,7 +136,7 @@ namespace Ex
                     return result;
                 }
 
-                __OPTIMIZED_FUNCTION_1
+                __OPTIMIZED_FUNCTION__
                 {
                     std::string s = remove_ctrl_append(temp);
                 }
@@ -157,7 +157,7 @@ namespace Ex
                     return s;
                 }
 
-                __OPTIMIZED_FUNCTION_2
+                __OPTIMIZED_FUNCTION_1
                 {
                     std::string s = remove_ctrl_erase(temp);
                 }
@@ -200,7 +200,7 @@ namespace Ex
                 *des = '\0';
             }
 
-            __OPTIMIZED_FUNCTION_1
+            __OPTIMIZED_FUNCTION__
             {
                 remove_ctrl_cstrings(s2, temp.data(), temp.length());
             }
