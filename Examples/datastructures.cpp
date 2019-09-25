@@ -62,7 +62,41 @@ namespace Ex
 
         namespace _1_Vector_And_String
         {
-            namespace _1_Inserting_And_Deleting
+            namespace _1_Reallocation
+            {
+                std::vector<int> createVec_1()
+                {
+                    std::vector<int> _vec;
+                    for (int i = 0; i < 10; i++)
+                    {
+                        _vec.push_back(RANDOM());
+                    }
+                    return _vec;
+                }
+
+                __NORMAL_FUNCTION
+                {
+                    std::vector<int> vec_1 = createVec_1();
+                }
+
+                std::vector<int> createVec_2()
+                {
+                    std::vector<int> _vec;
+                    _vec.reserve(10);
+                    for (int i = 0; i < 10; i++)
+                    {
+                        _vec.push_back(RANDOM());
+                    }
+                    return _vec;
+                }
+
+                __OPTIMIZED_FUNCTION_1
+                {
+                    std::vector<int> vec_2 = createVec_2();
+                }
+            }
+
+            namespace _2_Inserting_And_Deleting
             {
                 __NORMAL_FUNCTION
                 {
@@ -75,7 +109,7 @@ namespace Ex
                 }
             }
 
-            namespace _2_Iterating
+            namespace _3_Iterating
             {
                 __NORMAL_FUNCTION
                 {
@@ -88,7 +122,7 @@ namespace Ex
                 }
             }
 
-            namespace _3_Sorting
+            namespace _4_Sorting
             {
                 __NORMAL_FUNCTION
                 {
@@ -101,7 +135,7 @@ namespace Ex
                 }
             }
 
-            namespace _4_Lookup
+            namespace _5_Lookup
             {
                 __NORMAL_FUNCTION
                 {

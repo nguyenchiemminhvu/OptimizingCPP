@@ -153,22 +153,27 @@ namespace Ex
     {
         namespace _1_Vector_And_String
         {
-            namespace _1_Inserting_And_Deleting
+            namespace _1_Reallocation
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
 
-            namespace _2_Iterating
+            namespace _2_Inserting_And_Deleting
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
 
-            namespace _3_Sorting
+            namespace _3_Iterating
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
 
-            namespace _4_Lookup
+            namespace _4_Sorting
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _5_Lookup
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
