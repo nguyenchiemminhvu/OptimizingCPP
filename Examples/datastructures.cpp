@@ -62,80 +62,95 @@ namespace Ex
 
         namespace _1_Vector_And_String
         {
-            __NORMAL_FUNCTION
+            namespace _1_Reallocation
             {
+                __NORMAL_FUNCTION
+                {
 
+                }
+
+                __OPTIMIZED_FUNCTION_1
+                {
+
+                }
             }
 
-            __OPTIMIZED_FUNCTION_1
+            namespace _2_Inserting_And_Deleting
             {
+                __NORMAL_FUNCTION
+                {
 
+                }
+
+                __OPTIMIZED_FUNCTION_1
+                {
+
+                }
+            }
+
+            namespace _3_Iterating
+            {
+                __NORMAL_FUNCTION
+                {
+
+                }
+
+                __OPTIMIZED_FUNCTION_1
+                {
+
+                }
+            }
+
+            namespace _4_Sorting
+            {
+                __NORMAL_FUNCTION
+                {
+
+                }
+
+                __OPTIMIZED_FUNCTION_1
+                {
+
+                }
+            }
+
+            namespace _5_Lookup
+            {
+                __NORMAL_FUNCTION
+                {
+
+                }
+
+                __OPTIMIZED_FUNCTION_1
+                {
+
+                }
             }
         }
 
         namespace _2_Deque
         {
-            __NORMAL_FUNCTION
-            {
 
-            }
-
-            __OPTIMIZED_FUNCTION_1
-            {
-
-            }
         }
 
         namespace _3_List
         {
-            __NORMAL_FUNCTION
-            {
 
-            }
-
-            __OPTIMIZED_FUNCTION_1
-            {
-
-            }
         }
 
         namespace _4_Forward_List
         {
-            __NORMAL_FUNCTION
-            {
 
-            }
-
-            __OPTIMIZED_FUNCTION_1
-            {
-
-            }
         }
 
         namespace _5_Map_And_Multimap
         {
-            __NORMAL_FUNCTION
-            {
 
-            }
-
-            __OPTIMIZED_FUNCTION_1
-            {
-
-            }
         }
 
         namespace _6_Set_And_Multiset
         {
-            __NORMAL_FUNCTION
-            {
 
-            }
-
-            __OPTIMIZED_FUNCTION_1
-            {
-
-            }
         }
     }
 }

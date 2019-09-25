@@ -153,32 +153,55 @@ namespace Ex
     {
         namespace _1_Vector_And_String
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+            namespace _1_Reallocation
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _2_Inserting_And_Deleting
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _3_Iterating
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _4_Sorting
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _5_Lookup
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
         }
 
         namespace _2_Deque
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+
         }
 
         namespace _3_List
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+
         }
 
         namespace _4_Forward_List
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+
         }
 
         namespace _5_Map_And_Multimap
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+
         }
 
         namespace _6_Set_And_Multiset
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+
         }
     }
 
