@@ -173,12 +173,7 @@ namespace Ex
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
 
-            namespace _4_Sorting
-            {
-                __DECLARE_FUNCTIONS_FOR_TEST
-            }
-
-            namespace _5_Lookup
+            namespace _4_Lookup
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }

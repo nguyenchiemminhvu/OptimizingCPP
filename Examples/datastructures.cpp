@@ -60,6 +60,11 @@ namespace Ex
             bool operator == (const KeyValue &kv) { return strcmp(_key, kv._key) == 0; }
         };
 
+        bool compare_KeyValue(const KeyValue &kv1, const KeyValue &kv2)
+        {
+            return strcmp(kv1._key, kv2._key) < 0;
+        }
+
         namespace _1_Vector_And_String
         {
             namespace _1_Reallocation
@@ -159,32 +164,6 @@ namespace Ex
                     for (int i = 0; i < vec_2.size(); i++)
                     {
                     }
-                }
-            }
-
-            namespace _4_Sorting
-            {
-                __NORMAL_FUNCTION
-                {
-
-                }
-
-                __OPTIMIZED_FUNCTION__
-                {
-
-                }
-            }
-
-            namespace _5_Lookup
-            {
-                __NORMAL_FUNCTION
-                {
-
-                }
-
-                __OPTIMIZED_FUNCTION__
-                {
-
                 }
             }
         }
