@@ -94,37 +94,73 @@ namespace Ex
                 {
                     std::vector<KeyValue> vec_2 = createVec_2();
                 }
-
-                std::vector<KeyValue> temp = createVec_2();
-                __OPTIMIZED_FUNCTION_1
-                {
-                    std::vector<KeyValue> vec_3 = temp;
-                }
             }
 
             namespace _2_Inserting_And_Deleting
             {
-                __NORMAL_FUNCTION
+                std::vector<KeyValue> createVec_1()
                 {
-
+                    std::vector<KeyValue> _vec;
+                    for (int i = 0; i < 10; i++)
+                    {
+                        _vec.push_back(KeyValue(RANDOM()));
+                    }
+                    return _vec;
                 }
 
+                __NORMAL_FUNCTION
+                {
+                    std::vector<KeyValue> vec_1 = createVec_1();
+                }
+
+                std::vector<KeyValue> temp = createVec_1();
                 __OPTIMIZED_FUNCTION__
                 {
+                    std::vector<KeyValue> vec_2;
+                    vec_2.insert(vec_2.end(), temp.begin(), temp.end());
+                }
 
+                __OPTIMIZED_FUNCTION_1
+                {
+                    std::vector<KeyValue> vec_3;
+                    vec_3.reserve(temp.size());
+                    for (int i = 0; i < temp.size(); i++)
+                    {
+                        vec_3.push_back(temp[i]);
+                    }
                 }
             }
 
             namespace _3_Iterating
             {
+                std::vector<KeyValue> createVec()
+                {
+                    std::vector<KeyValue> _vec;
+                    for (int i = 0; i < 100; i++)
+                    {
+                        _vec.push_back(KeyValue(RANDOM()));
+                    }
+                    return _vec;
+                }
+
+                std::vector<KeyValue> vec_1 = createVec();
+
                 __NORMAL_FUNCTION
                 {
+                    for (std::vector<KeyValue>::iterator i = vec_1.begin(); i != vec_1.end(); i++)
+                    {
 
+                    }
                 }
+
+                std::vector<KeyValue> vec_2 = createVec();
 
                 __OPTIMIZED_FUNCTION__
                 {
+                    for (int i = 0; i < vec_2.size(); i++)
+                    {
 
+                    }
                 }
             }
 

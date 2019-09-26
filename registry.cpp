@@ -152,7 +152,7 @@ Registry::Registry()
 {
     REGISTER(Ex::CriticalStatements::_1_Expressions::_1_Group_Constants_Together);
     REGISTER(Ex::CriticalStatements::_1_Expressions::_2_Use_LessExpensive_Operators);
-    REGISTER(Ex::CriticalStatements::_1_Expressions::_3_Rounding_Integer_Division);
+    REGISTER_1(Ex::CriticalStatements::_1_Expressions::_3_Rounding_Integer_Division);
     REGISTER(Ex::CriticalStatements::_1_Expressions::_4_Double_Maybe_Better_Than_Float);
     REGISTER(Ex::CriticalStatements::_2_Control_Flows::_1_Prefer_Switch_To_Compare_Integer);
     REGISTER(Ex::CriticalStatements::_2_Control_Flows::_2_Prefer_Virtual_Function);
@@ -167,15 +167,15 @@ Registry::Registry()
 
     REGISTER(Ex::Strings::_1_First_Attempt::_1_Eliminate_Temporary_String_Objects);
     REGISTER(Ex::Strings::_1_First_Attempt::_2_Eliminate_Return_String_Value);
-    REGISTER(Ex::Strings::_2_Second_Attempt::_1_Use_Better_Algorithm);
+    REGISTER_1(Ex::Strings::_2_Second_Attempt::_1_Use_Better_Algorithm);
     REGISTER(Ex::Strings::_3_Use_Character_Arrays_Instead_Of_String);
 
-    REGISTER(Ex::Searching::_1_Change_Data_Structure_Representing_Keys);
+    REGISTER_1(Ex::Searching::_1_Change_Data_Structure_Representing_Keys);
     REGISTER(Ex::Searching::_2_Search_In_Sequence_Container);
     REGISTER(Ex::Searching::_3_Optimize_Search_In_Hashed_Tables);
 
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_1_Reallocation);
-    REGISTER(Ex::Data_Structures::_1_Vector_And_String::_2_Inserting_And_Deleting);
+    REGISTER_1(Ex::Data_Structures::_1_Vector_And_String::_2_Inserting_And_Deleting);
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_3_Iterating);
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_4_Sorting);
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_5_Lookup);
