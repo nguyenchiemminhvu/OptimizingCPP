@@ -22,75 +22,75 @@ void optimized_7(); \
 #define __OPTIMIZED_FUNCTION_6 void optimized_6()
 #define __OPTIMIZED_FUNCTION_7 void optimized_7()
 
-#define __DECLARE_POINTER_TO_FUNCTIONS__ \
-void (*f_normal)(void);
-
 namespace Ex
 {
-    namespace Expressions
+    namespace CriticalStatements
     {
-        namespace _1_Group_Constants_Together
+        namespace _1_Expressions
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+            namespace _1_Group_Constants_Together
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _2_Use_LessExpensive_Operators
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _3_Rounding_Integer_Division
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _4_Double_Maybe_Better_Than_Float
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
         }
 
-        namespace _2_Use_LessExpensive_Operators
+        namespace _2_Control_Flows
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+            namespace _1_Prefer_Switch_To_Compare_Integer
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _2_Prefer_Virtual_Function
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
         }
 
-        namespace _3_Rounding_Integer_Division
+        namespace _3_Loops
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+            namespace _1_Cache_The_Loop_Value
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _2_Count_Down_Instead_Of_Up
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
+
+            namespace _3_Remove_Hidden_Function_Call
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
         }
 
-        namespace _4_Double_Maybe_Better_Than_Float
+        namespace _4_Functions
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
-    }
+            namespace _1_Grouping_Function_Arguments
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
 
-    namespace Control_Flows
-    {
-        namespace _1_Prefer_Switch_To_Compare_Integer
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
-
-        namespace _2_Prefer_Virtual_Function
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
-    }
-
-    namespace Loops
-    {
-        namespace _1_Cache_The_Loop_Value
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
-
-        namespace _2_Count_Down_Instead_Of_Up
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
-
-        namespace _3_Remove_Hidden_Function_Call
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
-    }
-
-    namespace Functions
-    {
-        namespace _1_Grouping_Function_Arguments
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
-
-        namespace _2_Prefer_Return_Value_As_Output_Parameters
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
+            namespace _2_Prefer_Return_Value_As_Output_Parameters
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
         }
     }
 

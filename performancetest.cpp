@@ -136,8 +136,13 @@ void PerformanceTest::run(int nTime,
     }
 }
 
-void PerformanceTest::run(int nTime, const FuncPtr &_functions)
+void PerformanceTest::run(int nTime, std::string _namespace)
 {
+    std::cout << "" << std::endl;
+    std::cout << _namespace << std::endl;
+
+    FuncPtr _functions = _registry.get(_namespace);
+
     run(
         nTime,
         _functions.f_normal,
@@ -150,4 +155,6 @@ void PerformanceTest::run(int nTime, const FuncPtr &_functions)
         _functions.f_optimized_6,
         _functions.f_optimized_7
     );
+
+    std::cout << "" << std::endl;
 }

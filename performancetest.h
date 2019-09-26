@@ -4,12 +4,19 @@
 #include "registry.h"
 
 #include <stdint.h>
+#include <string>
 
 typedef void (*callback_function)(void);
+
+static Registry _registry;
 
 class PerformanceTest
 {
 public:
+
+    static void run(int nTime, std::string _namespace);
+
+private:
 
     static void run(int nTime,
                     callback_function normalFunc  = nullptr,
@@ -21,8 +28,6 @@ public:
                     callback_function optimized_5 = nullptr,
                     callback_function optimized_6 = nullptr,
                     callback_function optimized_7 = nullptr);
-
-    static void run(int nTime, const FuncPtr &_registry);
 
 };
 
