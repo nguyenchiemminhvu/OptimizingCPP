@@ -22,6 +22,9 @@ void optimized_7(); \
 #define __OPTIMIZED_FUNCTION_6 void optimized_6()
 #define __OPTIMIZED_FUNCTION_7 void optimized_7()
 
+#define __DECLARE_POINTER_TO_FUNCTIONS__ \
+void (*f_normal)(void);
+
 namespace Ex
 {
     namespace Expressions
@@ -213,21 +216,6 @@ namespace Ex
     }
 
     namespace Memory_Management
-    {
-
-    }
-
-    namespace Metaprogramming
-    {
-
-    }
-
-    namespace Use_Better_Libraries
-    {
-
-    }
-
-    namespace Use_Libraries_Better
     {
 
     }

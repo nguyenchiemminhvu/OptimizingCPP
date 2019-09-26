@@ -11,10 +11,12 @@ SOURCES += main.cpp \
     Examples/strings.cpp \
     Examples/searching.cpp \
     Examples/datastructures.cpp \
-    randomgenerator.cpp
+    randomgenerator.cpp \
+    registry.cpp
 
 HEADERS += \
     timer.h \
     performancetest.h \
     Examples/examples.h \
-    randomgenerator.h
+    randomgenerator.h \
+    registry.h

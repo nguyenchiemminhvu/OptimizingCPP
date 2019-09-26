@@ -1,6 +1,8 @@
 #ifndef PERFORMANCETEST_H
 #define PERFORMANCETEST_H
 
+#include "registry.h"
+
 #include <stdint.h>
 
 typedef void (*callback_function)(void);
@@ -19,6 +21,8 @@ public:
                     callback_function optimized_5 = nullptr,
                     callback_function optimized_6 = nullptr,
                     callback_function optimized_7 = nullptr);
+
+    static void run(int nTime, const FuncPtr &_registry);
 
 };
 

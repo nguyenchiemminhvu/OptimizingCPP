@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+#define stringify(s) #s
 
 void PerformanceTest::run(int nTime,
                           callback_function normalFunc,
@@ -37,7 +38,7 @@ void PerformanceTest::run(int nTime,
 
         for (int64_t i = 0; i < nTime; i++)
         {
-            optimized_1();
+            optimized();
         }
 
         GetTimer()->stop();
@@ -133,4 +134,20 @@ void PerformanceTest::run(int nTime,
 
         GetTimer()->stop();
     }
+}
+
+void PerformanceTest::run(int nTime, const FuncPtr &_functions)
+{
+    run(
+        nTime,
+        _functions.f_normal,
+        _functions.f_optimized,
+        _functions.f_optimized_1,
+        _functions.f_optimized_2,
+        _functions.f_optimized_3,
+        _functions.f_optimized_4,
+        _functions.f_optimized_5,
+        _functions.f_optimized_6,
+        _functions.f_optimized_7
+    );
 }
