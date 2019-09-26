@@ -149,7 +149,6 @@ namespace Ex
                 {
                     for (std::vector<KeyValue>::iterator i = vec_1.begin(); i != vec_1.end(); i++)
                     {
-
                     }
                 }
 
@@ -159,7 +158,6 @@ namespace Ex
                 {
                     for (int i = 0; i < vec_2.size(); i++)
                     {
-
                     }
                 }
             }
