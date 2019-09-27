@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
     PerformanceTest::run(
         1000000,
-        stringify(Ex::Data_Structures::_1_Vector_And_String::_4_Sorting)
+        stringify(Ex::Data_Structures::_2_Map_And_Multimap::_1_Inserting_And_Deleting)
     );
 
     return 0;

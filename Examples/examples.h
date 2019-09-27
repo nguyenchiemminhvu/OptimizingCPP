@@ -181,7 +181,10 @@ namespace Ex
 
         namespace _2_Map_And_Multimap
         {
-
+            namespace _1_Inserting_And_Deleting
+            {
+                __DECLARE_FUNCTIONS_FOR_TEST
+            }
         }
     }
 

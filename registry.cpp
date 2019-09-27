@@ -177,6 +177,7 @@ Registry::Registry()
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_1_Reallocation);
     REGISTER_1(Ex::Data_Structures::_1_Vector_And_String::_2_Inserting_And_Deleting);
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_3_Iterating);
+    REGISTER(Ex::Data_Structures::_2_Map_And_Multimap::_1_Inserting_And_Deleting);
 }
 
 Registry::~Registry()
