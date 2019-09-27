@@ -2,6 +2,7 @@
 #define REGISTRY_H
 
 #include "Examples/examples.h"
+#include "timer.h"
 
 #include <map>
 #include <string>
@@ -66,6 +67,18 @@ public:
     ~Registry();
 
     FuncPtr get(std::string key);
+
+    static Registry * getInstance();
+    static void destroyInstance();
+
+private:
+
+    static Registry * _instance;
 };
+
+#define InitRegistry() Registry::getInstance()
+#define ReleaseRegisty() Registry::destroyInstance()
+
+#define REGISTRY() Registry::getInstance()
 
 #endif // REGISTRY_H

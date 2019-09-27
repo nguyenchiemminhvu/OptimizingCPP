@@ -8,8 +8,6 @@
 
 typedef void (*callback_function)(void);
 
-static Registry _registry;
-
 class PerformanceTest
 {
 public:

@@ -16,13 +16,6 @@ void PerformanceTest::run(int nTime,
                           callback_function optimized_6,
                           callback_function optimized_7)
 {
-    GetTimer()->setType(Timer::DurationType::MILISECONDS);
-
-    std::cout << "Prepare timer................ ";
-    GetTimer()->start();
-    _sleep(500);
-    GetTimer()->stop();
-
     if (normalFunc)
     {
         std::cout << "Run normal function.......... ";
@@ -146,7 +139,7 @@ void PerformanceTest::run(int nTime, std::string _namespace)
     std::cout << "" << std::endl;
     std::cout << _namespace << std::endl;
 
-    FuncPtr _functions = _registry.get(_namespace);
+    FuncPtr _functions = REGISTRY()->get(_namespace);
 
     run(
         nTime,

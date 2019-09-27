@@ -150,6 +150,12 @@
 
 Registry::Registry()
 {
+    std::cout << "Prepare timer................ ";
+    GetTimer()->setType(Timer::DurationType::MILISECONDS);
+    GetTimer()->start();
+    _sleep(500);
+    GetTimer()->stop();
+
     REGISTER(Ex::CriticalStatements::_1_Expressions::_1_Group_Constants_Together);
     REGISTER(Ex::CriticalStatements::_1_Expressions::_2_Use_LessExpensive_Operators);
     REGISTER_1(Ex::CriticalStatements::_1_Expressions::_3_Rounding_Integer_Division);
@@ -183,9 +189,29 @@ Registry::Registry()
 Registry::~Registry()
 {
     _map.clear();
+    ReleaseTimer();
 }
 
 FuncPtr Registry::get(std::string key)
 {
     return _map.at(key);
+}
+
+Registry * Registry::_instance = nullptr;
+Registry * Registry::getInstance()
+{
+    if (_instance == nullptr)
+    {
+        _instance = new Registry();
+    }
+    return _instance;
+}
+
+void Registry::destroyInstance()
+{
+    if (_instance)
+    {
+        delete _instance;
+        _instance = nullptr;
+    }
 }
