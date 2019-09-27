@@ -174,12 +174,12 @@ namespace Ex
             {
                 __NORMAL_FUNCTION
                 {
-
+                    std::map<int, int> map_1;
                 }
 
                 __OPTIMIZED_FUNCTION__
                 {
-
+                    std::map<int, int> map_2;
                 }
             }
         }

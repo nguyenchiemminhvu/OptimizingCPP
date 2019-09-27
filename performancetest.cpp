@@ -18,6 +18,11 @@ void PerformanceTest::run(int nTime,
 {
     GetTimer()->setType(Timer::DurationType::MILISECONDS);
 
+    std::cout << "Prepare timer................ ";
+    GetTimer()->start();
+    _sleep(500);
+    GetTimer()->stop();
+
     if (normalFunc)
     {
         std::cout << "Run normal function.......... ";

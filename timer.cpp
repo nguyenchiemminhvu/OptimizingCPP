@@ -28,7 +28,6 @@ void Timer::stop()
     _endTime = clock::now();
     _duration = _endTime - _startTime;
 
-    // print log
     switch (_type) {
     case DurationType::NANOSECONDS:
         std::cout << std::chrono::duration_cast<std::chrono::nanoseconds>(_duration).count() << " (nanoseconds)" << std::endl;
