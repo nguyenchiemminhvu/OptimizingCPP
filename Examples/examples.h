@@ -179,27 +179,7 @@ namespace Ex
             }
         }
 
-        namespace _2_Deque
-        {
-
-        }
-
-        namespace _3_List
-        {
-
-        }
-
-        namespace _4_Forward_List
-        {
-
-        }
-
-        namespace _5_Map_And_Multimap
-        {
-
-        }
-
-        namespace _6_Set_And_Multiset
+        namespace _2_Map_And_Multimap
         {
 
         }
