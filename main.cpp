@@ -9,9 +9,23 @@ int main(int argc, char *argv[])
     InitRegistry();
 
     PerformanceTest::run(
-        100000,
-        stringify(Ex::Data_Structures::_2_Map_And_Multimap::_1_Inserting_And_Deleting)
+        10000000,
+        stringify(Ex::Data_Structures::_3_Unoder_Map)
     );
+
+	/////////////////////////////////////////////////////
+	//TEST ALL
+	/////////////////////////////////////////////////////
+	//std::vector<std::string> keys = REGISTRY()->keys();
+	//for (int i = 0; i < keys.size(); i++)
+	//{
+	//	PerformanceTest::run(
+	//		1000000,
+	//		keys[i]
+	//	);
+
+	//	system("pause");
+	//}
 
     ReleaseRegisty();
 

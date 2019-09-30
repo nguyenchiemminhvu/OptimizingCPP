@@ -75,13 +75,13 @@ namespace Ex
             {
                 __NORMAL_FUNCTION
                 {
-                    double d, t, a = -9.8f, v0 = 0.0f, d0 = 100.0f;
+                    double d = 0, t = 0, a = -9.8f, v0 = 0.0f, d0 = 100.0f;
                     d = a*t*t + v0*t + d0;
                 }
 
                 __OPTIMIZED_FUNCTION__
                 {
-                    float d, t, a = -9.8f, v0 = 0.0f, d0 = 100.0f;
+                    float d = 0, t = 0, a = -9.8f, v0 = 0.0f, d0 = 100.0f;
                     d = a*t*t + v0*t + d0;
                 }
             }

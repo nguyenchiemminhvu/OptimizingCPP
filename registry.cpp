@@ -5,6 +5,7 @@
 #define stringify(s) #s
 
 #define REGISTER(_namespace) \
+	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
@@ -20,9 +21,10 @@
                 nullptr \
             ) \
         ) \
-    )
+    ) \
 
 #define REGISTER_1(_namespace) \
+	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
@@ -41,6 +43,7 @@
     )
 
 #define REGISTER_2(_namespace) \
+	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
@@ -59,6 +62,7 @@
     )
 
 #define REGISTER_3(_namespace) \
+	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
@@ -77,6 +81,7 @@
     )
 
 #define REGISTER_4(_namespace) \
+	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
@@ -95,6 +100,7 @@
     )
 
 #define REGISTER_5(_namespace) \
+	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
@@ -113,6 +119,7 @@
     )
 
 #define REGISTER_6(_namespace) \
+	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
@@ -131,6 +138,7 @@
     )
 
 #define REGISTER_7(_namespace) \
+	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
@@ -183,7 +191,8 @@ Registry::Registry()
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_1_Reallocation);
     REGISTER_1(Ex::Data_Structures::_1_Vector_And_String::_2_Inserting_And_Deleting);
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_3_Iterating);
-    REGISTER(Ex::Data_Structures::_2_Map_And_Multimap::_1_Inserting_And_Deleting);
+    REGISTER(Ex::Data_Structures::_2_Map);
+	REGISTER(Ex::Data_Structures::_3_Unoder_Map);
 }
 
 Registry::~Registry()
@@ -195,6 +204,11 @@ Registry::~Registry()
 FuncPtr Registry::get(std::string key)
 {
     return _map.at(key);
+}
+
+std::vector<std::string> Registry::keys()
+{
+	return _keys;
 }
 
 Registry * Registry::_instance = nullptr;

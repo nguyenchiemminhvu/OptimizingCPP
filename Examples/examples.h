@@ -172,20 +172,17 @@ namespace Ex
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
-
-            namespace _4_Lookup
-            {
-                __DECLARE_FUNCTIONS_FOR_TEST
-            }
         }
 
-        namespace _2_Map_And_Multimap
+        namespace _2_Map
         {
-            namespace _1_Inserting_And_Deleting
-            {
-                __DECLARE_FUNCTIONS_FOR_TEST
-            }
+			__DECLARE_FUNCTIONS_FOR_TEST
         }
+
+		namespace _3_Unoder_Map
+		{
+			__DECLARE_FUNCTIONS_FOR_TEST
+		}
     }
 
     namespace Input_And_Output

@@ -5,6 +5,7 @@
 #include "timer.h"
 
 #include <map>
+#include <vector>
 #include <string>
 
 using callback = void (*)(void);
@@ -60,6 +61,7 @@ public:
 class Registry
 {
     std::map<std::string, FuncPtr> _map;
+	std::vector<std::string> _keys;
 
 public:
 
@@ -67,6 +69,7 @@ public:
     ~Registry();
 
     FuncPtr get(std::string key);
+	std::vector<std::string> keys();
 
     static Registry * getInstance();
     static void destroyInstance();
