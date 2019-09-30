@@ -9,11 +9,15 @@ int main(int argc, char *argv[])
     InitRegistry();
 
     PerformanceTest::run(
-        1000000,
+        100000,
         stringify(Ex::Data_Structures::_2_Map_And_Multimap::_1_Inserting_And_Deleting)
     );
 
     ReleaseRegisty();
+
+#if defined(_MBCS)
+	system("pause");
+#endif
 
     return 0;
 }

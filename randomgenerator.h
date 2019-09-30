@@ -1,7 +1,6 @@
 #ifndef RANDOMGENERATOR_H
 #define RANDOMGENERATOR_H
 
-#include <chrono>
 #include <random>
 #include <time.h>
 #include <stdint.h>

@@ -1,5 +1,5 @@
 #include "examples.h"
-#include "randomgenerator.h"
+#include "../randomgenerator.h"
 
 #include <typeinfo>
 #include <time.h>
@@ -172,14 +172,40 @@ namespace Ex
         {
             namespace _1_Inserting_And_Deleting
             {
+                std::vector<KeyValue> createVec()
+                {
+                    std::vector<KeyValue> _vec;
+                    _vec.reserve(100);
+                    for (int i = 0; i < _vec.size(); i++)
+                    {
+                        _vec.push_back(KeyValue(RANDOM()));
+                    }
+                    return _vec;
+                }
+
+                std::vector<KeyValue> temp = createVec();
+                
                 __NORMAL_FUNCTION
                 {
-                    std::map<int, int> map_1;
+                    std::map<std::string, int> map_1;
+                    std::vector<KeyValue> _vec = temp;
+                    std::stable_sort(_vec.begin(), _vec.end(), compare_KeyValue);
+                    for (int i = 0; i < _vec.size(); i++)
+                    {
+                        map_1.insert(std::pair<std::string, int>(_vec[i]._key, _vec[i]._value));
+                    }
                 }
 
                 __OPTIMIZED_FUNCTION__
                 {
-                    std::map<int, int> map_2;
+                    std::map<std::string, int> map_2;
+                    std::vector<KeyValue> _vec = temp;
+                    std::stable_sort(_vec.begin(), _vec.end(), compare_KeyValue);
+                    std::map<std::string, int>::iterator hint = map_2.end();
+                    for (int i = 0; i < _vec.size(); i++)
+                    {
+                        hint = map_2.insert(hint, std::pair<std::string, int>(_vec[i]._key, _vec[i]._value));
+                    }
                 }
             }
         }

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 14 for Windows Desktop
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Optimized_CPP", "Optimized_CPP.vcxproj", "{27692458-8600-49F6-A055-D6FD9A3436D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27692458-8600-49F6-A055-D6FD9A3436D5}.Debug|x64.ActiveCfg = Debug|x64
+		{27692458-8600-49F6-A055-D6FD9A3436D5}.Debug|x64.Build.0 = Debug|x64
+		{27692458-8600-49F6-A055-D6FD9A3436D5}.Debug|x86.ActiveCfg = Debug|Win32
+		{27692458-8600-49F6-A055-D6FD9A3436D5}.Debug|x86.Build.0 = Debug|Win32
+		{27692458-8600-49F6-A055-D6FD9A3436D5}.Release|x64.ActiveCfg = Release|x64
+		{27692458-8600-49F6-A055-D6FD9A3436D5}.Release|x64.Build.0 = Release|x64
+		{27692458-8600-49F6-A055-D6FD9A3436D5}.Release|x86.ActiveCfg = Release|Win32
+		{27692458-8600-49F6-A055-D6FD9A3436D5}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
