@@ -207,18 +207,5 @@ namespace Ex
 				}
             }
         }
-
-		namespace _3_Unoder_Map
-		{
-			__NORMAL_FUNCTION
-			{
-				std::map<std::string, int> map_1;
-			}
-
-			__OPTIMIZED_FUNCTION__
-			{
-				std::unordered_map<std::string, int> map_2;
-			}
-		}
     }
 }

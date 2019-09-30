@@ -178,16 +178,25 @@ namespace Ex
         {
 			__DECLARE_FUNCTIONS_FOR_TEST
         }
-
-		namespace _3_Unoder_Map
-		{
-			__DECLARE_FUNCTIONS_FOR_TEST
-		}
     }
 
     namespace Input_And_Output
     {
+		namespace Reading_Files
+		{
+			namespace _1_Create_A_Parsimonious_Function
+			{
+				__DECLARE_FUNCTIONS_FOR_TEST
+			}
+		}
 
+		namespace Writing_Files
+		{
+			namespace _1_
+			{
+				__DECLARE_FUNCTIONS_FOR_TEST
+			}
+		}
     }
 
     namespace Memory_Management

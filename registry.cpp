@@ -192,7 +192,6 @@ Registry::Registry()
     REGISTER_1(Ex::Data_Structures::_1_Vector_And_String::_2_Inserting_And_Deleting);
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_3_Iterating);
     REGISTER(Ex::Data_Structures::_2_Map);
-	REGISTER(Ex::Data_Structures::_3_Unoder_Map);
 }
 
 Registry::~Registry()

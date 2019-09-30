@@ -113,6 +113,7 @@
     <ClCompile Include="Examples\bitwise.cpp" />
     <ClCompile Include="Examples\criticalstatements.cpp" />
     <ClCompile Include="Examples\datastructures.cpp" />
+    <ClCompile Include="Examples\input_output.cpp" />
     <ClCompile Include="Examples\searching.cpp" />
     <ClCompile Include="Examples\strings.cpp" />
     <ClCompile Include="main.cpp" />

@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     PerformanceTest::run(
         10000000,
-        stringify(Ex::Data_Structures::_3_Unoder_Map)
+        stringify(Ex::Data_Structures::_2_Map)
     );
 
 	/////////////////////////////////////////////////////
