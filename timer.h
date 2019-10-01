@@ -25,6 +25,7 @@ public:
 
     void start();
     void stop();
+	std::chrono::time_point<std::chrono::high_resolution_clock>::duration getDuration();
 
     static Timer * getInstance();
     static void destroyInstance();

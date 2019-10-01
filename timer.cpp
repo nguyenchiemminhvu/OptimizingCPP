@@ -53,6 +53,11 @@ void Timer::stop()
     }
 }
 
+std::chrono::time_point<std::chrono::high_resolution_clock>::duration Timer::getDuration()
+{
+	return _duration;
+}
+
 Timer * Timer::getInstance()
 {
     if (_instance == nullptr)

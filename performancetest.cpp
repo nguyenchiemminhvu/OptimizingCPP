@@ -1,6 +1,7 @@
 #include "performancetest.h"
 #include "timer.h"
 
+#include <chrono>
 #include <iostream>
 #include <locale>
 
@@ -17,6 +18,7 @@ void PerformanceTest::run(int nTime,
                           callback_function optimized_6,
                           callback_function optimized_7)
 {
+	std::chrono::time_point<std::chrono::high_resolution_clock>::duration d_normal;
     if (normalFunc)
     {
         std::cout << "Run normal function.......... ";
@@ -28,8 +30,10 @@ void PerformanceTest::run(int nTime,
         }
 
         GetTimer()->stop();
+		d_normal = GetTimer()->getDuration();
     }
 
+	std::chrono::time_point<std::chrono::high_resolution_clock>::duration d_optimized;
     if (optimized)
     {
         std::cout << "Run optimized function....... ";
@@ -41,8 +45,13 @@ void PerformanceTest::run(int nTime,
         }
 
         GetTimer()->stop();
+		d_optimized = GetTimer()->getDuration();
+		auto d_normal_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_normal).count();
+		auto d_optimized_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_optimized).count();
+		std::cout << "============================> " << 100 - (d_optimized_count / d_normal_count) * 100 << "%" << std::endl;
     }
 
+	std::chrono::time_point<std::chrono::high_resolution_clock>::duration d_optimized_1;
     if (optimized_1)
     {
         std::cout << "Run optimized function (1)... ";
@@ -54,8 +63,13 @@ void PerformanceTest::run(int nTime,
         }
 
         GetTimer()->stop();
+		d_optimized_1 = GetTimer()->getDuration();
+		auto d_normal_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_normal).count();
+		auto d_optimized_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_optimized_1).count();
+		std::cout << "============================> " << 100 - (d_optimized_count / d_normal_count) * 100 << "%" << std::endl;
     }
 
+	std::chrono::time_point<std::chrono::high_resolution_clock>::duration d_optimized_2;
     if (optimized_2)
     {
         std::cout << "Run optimized function (2)... ";
@@ -67,8 +81,13 @@ void PerformanceTest::run(int nTime,
         }
 
         GetTimer()->stop();
+		d_optimized_2 = GetTimer()->getDuration();
+		auto d_normal_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_normal).count();
+		auto d_optimized_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_optimized_2).count();
+		std::cout << "============================> " << 100 - (d_optimized_count / d_normal_count) * 100 << "%" << std::endl;
     }
 
+	std::chrono::time_point<std::chrono::high_resolution_clock>::duration d_optimized_3;
     if (optimized_3)
     {
         std::cout << "Run optimized function (3)... ";
@@ -80,8 +99,13 @@ void PerformanceTest::run(int nTime,
         }
 
         GetTimer()->stop();
+		d_optimized_3 = GetTimer()->getDuration();
+		auto d_normal_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_normal).count();
+		auto d_optimized_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_optimized_3).count();
+		std::cout << "============================> " << 100 - (d_optimized_count / d_normal_count) * 100 << "%" << std::endl;
     }
 
+	std::chrono::time_point<std::chrono::high_resolution_clock>::duration d_optimized_4;
     if (optimized_4)
     {
         std::cout << "Run optimized function (4)... ";
@@ -93,8 +117,13 @@ void PerformanceTest::run(int nTime,
         }
 
         GetTimer()->stop();
+		d_optimized_4 = GetTimer()->getDuration();
+		auto d_normal_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_normal).count();
+		auto d_optimized_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_optimized_4).count();
+		std::cout << "============================> " << 100 - (d_optimized_count / d_normal_count) * 100 << "%" << std::endl;
     }
 
+	std::chrono::time_point<std::chrono::high_resolution_clock>::duration d_optimized_5;
     if (optimized_5)
     {
         std::cout << "Run optimized function (5)... ";
@@ -106,8 +135,13 @@ void PerformanceTest::run(int nTime,
         }
 
         GetTimer()->stop();
+		d_optimized_5 = GetTimer()->getDuration();
+		auto d_normal_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_normal).count();
+		auto d_optimized_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_optimized_5).count();
+		std::cout << "============================> " << 100 - (d_optimized_count / d_normal_count) * 100 << "%" << std::endl;
     }
 
+	std::chrono::time_point<std::chrono::high_resolution_clock>::duration d_optimized_6;
     if (optimized_6)
     {
         std::cout << "Run optimized function (6)... ";
@@ -119,8 +153,13 @@ void PerformanceTest::run(int nTime,
         }
 
         GetTimer()->stop();
+		d_optimized_6 = GetTimer()->getDuration();
+		auto d_normal_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_normal).count();
+		auto d_optimized_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_optimized_6).count();
+		std::cout << "============================> " << 100 - (d_optimized_count / d_normal_count) * 100 << "%" << std::endl;
     }
 
+	std::chrono::time_point<std::chrono::high_resolution_clock>::duration d_optimized_7;
     if (optimized_7)
     {
         std::cout << "Run optimized function (7)... ";
@@ -132,6 +171,10 @@ void PerformanceTest::run(int nTime,
         }
 
         GetTimer()->stop();
+		d_optimized_7 = GetTimer()->getDuration();
+		auto d_normal_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_normal).count();
+		auto d_optimized_count = (double)std::chrono::duration_cast<std::chrono::milliseconds>(d_optimized_7).count();
+		std::cout << "============================> " << 100 - (d_optimized_count / d_normal_count) * 100 << "%" << std::endl;
     }
 }
 

@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     InitRegistry();
 
     PerformanceTest::run(
-		1000000,
+		100000000,
         stringify(Ex::Input_And_Output::Reading_Files::_1_Remove_Checking_EOF)
     );
 
