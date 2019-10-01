@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <fstream>
 #include <sstream>
+#include <stdio.h>
 
 namespace Ex
 {
@@ -49,10 +50,23 @@ namespace Ex
 			__OPTIMIZED_FUNCTION_1
 			{
 				std::ifstream file;
+				char buffer[1024];
 				file.open("file_for_test.txt");
 				if (file)
 				{
-					
+					file.rdbuf()->sgetn(buffer, sizeof(buffer));
+				}
+				file.close();
+			}
+
+			__OPTIMIZED_FUNCTION_2
+			{
+				std::ifstream file;
+				char buffer[1024];
+				file.open("file_for_test.txt");
+				if (file)
+				{
+					file.read(buffer, sizeof(buffer));
 				}
 				file.close();
 			}
