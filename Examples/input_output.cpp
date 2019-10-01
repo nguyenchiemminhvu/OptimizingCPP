@@ -71,18 +71,5 @@ namespace Ex
 				file.close();
 			}
 		}
-
-		namespace Writing_Files
-		{
-			__NORMAL_FUNCTION
-			{
-
-			}
-
-			__OPTIMIZED_FUNCTION__
-			{
-
-			}
-		}
 	}
 }
