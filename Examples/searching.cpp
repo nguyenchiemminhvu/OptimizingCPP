@@ -86,22 +86,6 @@ namespace Ex
                     //std::cout << "Not found" << std::endl;
                 }
             }
-
-            bool compare_less_ptr(const char* ptr1, const char* ptr2)
-            {
-                return strcmp(ptr1, ptr2) < 0;
-            }
-
-            std::map<const char*, int, bool(*)(const char*, const char*)> map_3(compare_less_ptr);
-
-            __OPTIMIZED_FUNCTION_1
-            {
-                map_3["111"] = 1;
-                map_3["222"] = 2;
-                map_3["333"] = 3;
-                map_3["444"] = 4;
-                map_3["555"] = 5;
-            }
         }
 
         namespace _2_Search_In_Sequence_Container

@@ -103,7 +103,7 @@ namespace Ex
 
             namespace _2_Inserting_And_Deleting
             {
-                std::vector<KeyValue> createVec_1()
+                std::vector<KeyValue> createVec()
                 {
                     std::vector<KeyValue> _vec;
                     for (int i = 0; i < 10; i++)
@@ -115,24 +115,28 @@ namespace Ex
 
                 __NORMAL_FUNCTION
                 {
-                    std::vector<KeyValue> vec_1 = createVec_1();
+					std::vector<KeyValue> vec_1;
+					for (int i = 0; i < 10; i++)
+					{
+						vec_1.push_back(KeyValue(RANDOM()));
+					}
                 }
 
-                std::vector<KeyValue> temp = createVec_1();
+                std::vector<KeyValue> temp = createVec();
                 __OPTIMIZED_FUNCTION__
                 {
-                    std::vector<KeyValue> vec_2;
-                    vec_2.insert(vec_2.end(), temp.begin(), temp.end());
+					std::vector<KeyValue> vec_2;
+					vec_2.reserve(temp.size());
+					for (int i = 0; i < temp.size(); i++)
+					{
+						vec_2.push_back(temp[i]);
+					}
                 }
 
                 __OPTIMIZED_FUNCTION_1
                 {
-                    std::vector<KeyValue> vec_3;
-                    vec_3.reserve(temp.size());
-                    for (int i = 0; i < temp.size(); i++)
-                    {
-                        vec_3.push_back(temp[i]);
-                    }
+					std::vector<KeyValue> vec_3;
+					vec_3.insert(vec_3.end(), temp.begin(), temp.end());
                 }
             }
 

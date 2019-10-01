@@ -9,8 +9,8 @@ int main(int argc, char *argv[])
     InitRegistry();
 
     PerformanceTest::run(
-        10000000,
-        stringify(Ex::Data_Structures::_2_Map)
+		1000000,
+        stringify(Ex::Input_And_Output::Reading_Files::_1_Remove_Checking_EOF)
     );
 
 	/////////////////////////////////////////////////////
@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 	//for (int i = 0; i < keys.size(); i++)
 	//{
 	//	PerformanceTest::run(
-	//		1000000,
 	//		keys[i]
 	//	);
 
@@ -29,9 +28,7 @@ int main(int argc, char *argv[])
 
     ReleaseRegisty();
 
-#if defined(_MBCS)
 	system("pause");
-#endif
 
     return 0;
 }

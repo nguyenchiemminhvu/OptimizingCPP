@@ -12,7 +12,8 @@ class PerformanceTest
 {
 public:
 
-    static void run(int nTime, std::string _namespace);
+    static void run(std::string _namespace);
+	static void run(int nTime, std::string _namespace);
 
 private:
 

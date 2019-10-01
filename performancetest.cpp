@@ -2,6 +2,7 @@
 #include "timer.h"
 
 #include <iostream>
+#include <locale>
 
 #define stringify(s) #s
 
@@ -134,15 +135,17 @@ void PerformanceTest::run(int nTime,
     }
 }
 
-void PerformanceTest::run(int nTime, std::string _namespace)
+void PerformanceTest::run(std::string _namespace)
 {
-    std::cout << "" << std::endl;
-    std::cout << _namespace << std::endl;
+	FuncPtr _functions = REGISTRY()->get(_namespace);
 
-    FuncPtr _functions = REGISTRY()->get(_namespace);
+	std::cout.imbue(std::locale(""));
+	std::cout << std::endl;
+    std::cout << "Run test case " << _namespace;
+	std::cout << " in " << _functions._nTime << " (times)" << std::endl;
 
     run(
-        nTime,
+        _functions._nTime,
         _functions.f_normal,
         _functions.f_optimized,
         _functions.f_optimized_1,
@@ -155,4 +158,29 @@ void PerformanceTest::run(int nTime, std::string _namespace)
     );
 
     std::cout << "" << std::endl;
+}
+
+void PerformanceTest::run(int nTime, std::string _namespace)
+{
+	FuncPtr _functions = REGISTRY()->get(_namespace);
+
+	std::cout.imbue(std::locale(""));
+	std::cout << std::endl;
+	std::cout << "Run test case " << _namespace;
+	std::cout << " in " << nTime << " (times)" << std::endl;
+
+	run(
+		nTime,
+		_functions.f_normal,
+		_functions.f_optimized,
+		_functions.f_optimized_1,
+		_functions.f_optimized_2,
+		_functions.f_optimized_3,
+		_functions.f_optimized_4,
+		_functions.f_optimized_5,
+		_functions.f_optimized_6,
+		_functions.f_optimized_7
+	);
+
+	std::cout << "" << std::endl;
 }

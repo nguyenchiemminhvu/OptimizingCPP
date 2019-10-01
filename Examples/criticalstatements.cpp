@@ -246,7 +246,6 @@ namespace Ex
                         std::string s("<p>");
                         s += "</p>";
                     }
-                    // 133s
                 }
 
                 __OPTIMIZED_FUNCTION__
@@ -257,7 +256,7 @@ namespace Ex
                         s += "<p>";
                         s += "</p>";
                     }
-                    // 110s
+
                 }
             }
         }

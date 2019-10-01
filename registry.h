@@ -13,6 +13,9 @@ using callback = void (*)(void);
 class FuncPtr
 {
 public:
+
+	int _nTime;
+
     void (*f_normal)(void);
     void (*f_optimized)(void);
     void (*f_optimized_1)(void);
@@ -25,6 +28,7 @@ public:
 
     FuncPtr()
     {
+		_nTime		  = 1000000;
         f_normal      =
         f_optimized   =
         f_optimized_1 =
@@ -36,7 +40,8 @@ public:
         f_optimized_7 = nullptr;
     }
 
-    FuncPtr(callback normal,
+    FuncPtr(int nTime,
+			callback normal,
             callback opt,
             callback opt1 = nullptr,
             callback opt2 = nullptr,
@@ -46,6 +51,7 @@ public:
             callback opt6 = nullptr,
             callback opt7 = nullptr)
     {
+		_nTime		  = nTime;
         f_normal      = normal;
         f_optimized   = opt;
         f_optimized_1 = opt1;

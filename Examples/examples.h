@@ -184,7 +184,7 @@ namespace Ex
     {
 		namespace Reading_Files
 		{
-			namespace _1_Create_A_Parsimonious_Function
+			namespace _1_Remove_Checking_EOF
 			{
 				__DECLARE_FUNCTIONS_FOR_TEST
 			}

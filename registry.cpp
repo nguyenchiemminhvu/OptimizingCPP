@@ -4,12 +4,13 @@
 
 #define stringify(s) #s
 
-#define REGISTER(_namespace) \
+#define REGISTER(_namespace, _nTime) \
 	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
             FuncPtr( \
+				_nTime, \
                 _namespace::normalFunc, \
                 _namespace::optimized, \
                 nullptr, \
@@ -23,12 +24,13 @@
         ) \
     ) \
 
-#define REGISTER_1(_namespace) \
+#define REGISTER_1(_namespace, _nTime) \
 	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
             FuncPtr( \
+				_nTime, \
                 _namespace::normalFunc, \
                 _namespace::optimized, \
                 _namespace::optimized_1, \
@@ -42,12 +44,13 @@
         ) \
     )
 
-#define REGISTER_2(_namespace) \
+#define REGISTER_2(_namespace, _nTime) \
 	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
             FuncPtr( \
+				_nTime, \
                 _namespace::normalFunc, \
                 _namespace::optimized, \
                 _namespace::optimized_1, \
@@ -61,12 +64,13 @@
         ) \
     )
 
-#define REGISTER_3(_namespace) \
+#define REGISTER_3(_namespace, _nTime) \
 	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
             FuncPtr( \
+				_nTime, \
                 _namespace::normalFunc, \
                 _namespace::optimized, \
                 _namespace::optimized_1, \
@@ -80,12 +84,13 @@
         ) \
     )
 
-#define REGISTER_4(_namespace) \
+#define REGISTER_4(_namespace, _nTime) \
 	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
             FuncPtr( \
+				_nTime, \
                 _namespace::normalFunc, \
                 _namespace::optimized, \
                 _namespace::optimized_1, \
@@ -99,12 +104,13 @@
         ) \
     )
 
-#define REGISTER_5(_namespace) \
+#define REGISTER_5(_namespace, _nTime) \
 	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
             FuncPtr( \
+				_nTime, \
                 _namespace::normalFunc, \
                 _namespace::optimized, \
                 _namespace::optimized_1, \
@@ -118,12 +124,13 @@
         ) \
     )
 
-#define REGISTER_6(_namespace) \
+#define REGISTER_6(_namespace, _nTime) \
 	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
             FuncPtr( \
+				_nTime, \
                 _namespace::normalFunc, \
                 _namespace::optimized, \
                 _namespace::optimized_1, \
@@ -137,12 +144,13 @@
         ) \
     )
 
-#define REGISTER_7(_namespace) \
+#define REGISTER_7(_namespace, _nTime) \
 	_keys.push_back(stringify(_namespace)); \
     _map.insert( \
         std::pair<std::string, FuncPtr>( \
             stringify(_namespace), \
             FuncPtr( \
+				_nTime, \
                 _namespace::normalFunc, \
                 _namespace::optimized, \
                 _namespace::optimized_1, \
@@ -164,34 +172,36 @@ Registry::Registry()
     _sleep(500);
     GetTimer()->stop();
 
-    REGISTER(Ex::CriticalStatements::_1_Expressions::_1_Group_Constants_Together);
-    REGISTER(Ex::CriticalStatements::_1_Expressions::_2_Use_LessExpensive_Operators);
-    REGISTER_1(Ex::CriticalStatements::_1_Expressions::_3_Rounding_Integer_Division);
-    REGISTER(Ex::CriticalStatements::_1_Expressions::_4_Double_Maybe_Better_Than_Float);
-    REGISTER(Ex::CriticalStatements::_2_Control_Flows::_1_Prefer_Switch_To_Compare_Integer);
-    REGISTER(Ex::CriticalStatements::_2_Control_Flows::_2_Prefer_Virtual_Function);
-    REGISTER(Ex::CriticalStatements::_3_Loops::_1_Cache_The_Loop_Value);
-    REGISTER(Ex::CriticalStatements::_3_Loops::_2_Count_Down_Instead_Of_Up);
-    REGISTER(Ex::CriticalStatements::_3_Loops::_3_Remove_Hidden_Function_Call);
-    REGISTER(Ex::CriticalStatements::_4_Functions::_1_Grouping_Function_Arguments);
-    REGISTER(Ex::CriticalStatements::_4_Functions::_2_Prefer_Return_Value_As_Output_Parameters);
+    REGISTER(Ex::CriticalStatements::_1_Expressions::_1_Group_Constants_Together, 10000000);
+    REGISTER(Ex::CriticalStatements::_1_Expressions::_2_Use_LessExpensive_Operators, 10000000);
+    REGISTER_1(Ex::CriticalStatements::_1_Expressions::_3_Rounding_Integer_Division, 10000000);
+    REGISTER(Ex::CriticalStatements::_1_Expressions::_4_Double_Maybe_Better_Than_Float, 10000000);
+    REGISTER(Ex::CriticalStatements::_2_Control_Flows::_1_Prefer_Switch_To_Compare_Integer, 10000000);
+    REGISTER(Ex::CriticalStatements::_2_Control_Flows::_2_Prefer_Virtual_Function, 10000000);
+    REGISTER(Ex::CriticalStatements::_3_Loops::_1_Cache_The_Loop_Value, 1000000);
+    REGISTER(Ex::CriticalStatements::_3_Loops::_2_Count_Down_Instead_Of_Up, 10000000);
+    REGISTER(Ex::CriticalStatements::_3_Loops::_3_Remove_Hidden_Function_Call, 10000000);
+    REGISTER(Ex::CriticalStatements::_4_Functions::_1_Grouping_Function_Arguments, 10000000);
+    REGISTER(Ex::CriticalStatements::_4_Functions::_2_Prefer_Return_Value_As_Output_Parameters, 10000000);
 
-    REGISTER(Ex::Bitwise::_1_Check_Power_Of_Two);
-    REGISTER(Ex::Bitwise::_2_Add_One);
+    REGISTER(Ex::Bitwise::_1_Check_Power_Of_Two, 10000000);
+    REGISTER(Ex::Bitwise::_2_Add_One, 10000000);
 
-    REGISTER(Ex::Strings::_1_First_Attempt::_1_Eliminate_Temporary_String_Objects);
-    REGISTER(Ex::Strings::_1_First_Attempt::_2_Eliminate_Return_String_Value);
-    REGISTER_1(Ex::Strings::_2_Second_Attempt::_1_Use_Better_Algorithm);
-    REGISTER(Ex::Strings::_3_Use_Character_Arrays_Instead_Of_String);
+    REGISTER(Ex::Strings::_1_First_Attempt::_1_Eliminate_Temporary_String_Objects, 1000000);
+    REGISTER(Ex::Strings::_1_First_Attempt::_2_Eliminate_Return_String_Value, 1000000);
+    REGISTER_1(Ex::Strings::_2_Second_Attempt::_1_Use_Better_Algorithm, 1000000);
+    REGISTER(Ex::Strings::_3_Use_Character_Arrays_Instead_Of_String, 1000000);
 
-    REGISTER_1(Ex::Searching::_1_Change_Data_Structure_Representing_Keys);
-    REGISTER(Ex::Searching::_2_Search_In_Sequence_Container);
-    REGISTER(Ex::Searching::_3_Optimize_Search_In_Hashed_Tables);
+    REGISTER(Ex::Searching::_1_Change_Data_Structure_Representing_Keys, 1000000);
+    REGISTER(Ex::Searching::_2_Search_In_Sequence_Container, 1000000);
+    REGISTER(Ex::Searching::_3_Optimize_Search_In_Hashed_Tables, 1000000);
 
-    REGISTER(Ex::Data_Structures::_1_Vector_And_String::_1_Reallocation);
-    REGISTER_1(Ex::Data_Structures::_1_Vector_And_String::_2_Inserting_And_Deleting);
-    REGISTER(Ex::Data_Structures::_1_Vector_And_String::_3_Iterating);
-    REGISTER(Ex::Data_Structures::_2_Map);
+    REGISTER(Ex::Data_Structures::_1_Vector_And_String::_1_Reallocation, 1000000);
+    REGISTER_1(Ex::Data_Structures::_1_Vector_And_String::_2_Inserting_And_Deleting, 1000000);
+    REGISTER(Ex::Data_Structures::_1_Vector_And_String::_3_Iterating, 1000000);
+    REGISTER(Ex::Data_Structures::_2_Map, 1000000);
+
+	REGISTER(Ex::Input_And_Output::Reading_Files::_1_Remove_Checking_EOF, 1000000);
 }
 
 Registry::~Registry()
