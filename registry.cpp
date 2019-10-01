@@ -202,6 +202,7 @@ Registry::Registry()
     REGISTER(Ex::Data_Structures::_2_Map, 1000000);
 
 	REGISTER_2(Ex::Input_And_Output::Reading_Files, 10000);
+	REGISTER(Ex::Input_And_Output::Writing_Files, 10000);
 }
 
 Registry::~Registry()

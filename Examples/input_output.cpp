@@ -18,7 +18,7 @@ namespace Ex
 			__NORMAL_FUNCTION
 			{
 				std::ifstream file;
-				file.open("file_for_test.txt");
+				file.open("file_to_read.txt");
 				if (file)
 				{
 					std::stringstream ss;
@@ -35,7 +35,7 @@ namespace Ex
 			__OPTIMIZED_FUNCTION__
 			{
 				std::ifstream file;
-				file.open("file_for_test.txt");
+				file.open("file_to_read.txt");
 				if (file)
 				{
 					std::string str;
@@ -51,7 +51,7 @@ namespace Ex
 			{
 				std::ifstream file;
 				char buffer[1024];
-				file.open("file_for_test.txt");
+				file.open("file_to_read.txt");
 				if (file)
 				{
 					file.rdbuf()->sgetn(buffer, sizeof(buffer));
@@ -63,7 +63,7 @@ namespace Ex
 			{
 				std::ifstream file;
 				char buffer[1024];
-				file.open("file_for_test.txt");
+				file.open("file_to_read.txt");
 				if (file)
 				{
 					file.read(buffer, sizeof(buffer));
@@ -74,7 +74,15 @@ namespace Ex
 
 		namespace Writing_Files
 		{
-			
+			__NORMAL_FUNCTION
+			{
+
+			}
+
+			__OPTIMIZED_FUNCTION__
+			{
+
+			}
 		}
 	}
 }
