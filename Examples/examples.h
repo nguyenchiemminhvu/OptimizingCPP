@@ -184,18 +184,12 @@ namespace Ex
     {
 		namespace Reading_Files
 		{
-			namespace _1_Remove_Checking_EOF
-			{
-				__DECLARE_FUNCTIONS_FOR_TEST
-			}
+			__DECLARE_FUNCTIONS_FOR_TEST
 		}
 
 		namespace Writing_Files
 		{
-			namespace _1_
-			{
-				__DECLARE_FUNCTIONS_FOR_TEST
-			}
+			__DECLARE_FUNCTIONS_FOR_TEST
 		}
     }
 

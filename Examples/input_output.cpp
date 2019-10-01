@@ -5,6 +5,8 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <fstream>
+#include <sstream>
 
 namespace Ex
 {
@@ -12,18 +14,19 @@ namespace Ex
 	{
 		namespace Reading_Files
 		{
-			namespace _1_Remove_Checking_EOF
+			__NORMAL_FUNCTION
+			{
+				
+			}
+
+			__OPTIMIZED_FUNCTION__
+			{
+				
+			}
+
+			__OPTIMIZED_FUNCTION_1
 			{
 
-				__NORMAL_FUNCTION
-				{
-
-				}
-
-				__OPTIMIZED_FUNCTION__
-				{
-
-				}
 			}
 		}
 

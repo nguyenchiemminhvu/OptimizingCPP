@@ -12,7 +12,8 @@ SOURCES += main.cpp \
     Examples/searching.cpp \
     Examples/datastructures.cpp \
     randomgenerator.cpp \
-    registry.cpp
+    registry.cpp \
+    Examples/input_output.cpp
 
 HEADERS += \
     timer.h \
