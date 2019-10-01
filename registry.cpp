@@ -201,7 +201,7 @@ Registry::Registry()
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_3_Iterating, 1000000);
     REGISTER(Ex::Data_Structures::_2_Map, 1000000);
 
-	REGISTER(Ex::Input_And_Output::Reading_Files, 10000);
+	REGISTER_1(Ex::Input_And_Output::Reading_Files, 10000);
 }
 
 Registry::~Registry()
