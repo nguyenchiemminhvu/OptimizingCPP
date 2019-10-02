@@ -203,7 +203,7 @@ Registry::Registry()
 
 	REGISTER_2(Ex::Input_And_Output::Reading_Files, 10000);
 
-
+	REGISTER(Ex::Memory_Management::_1_Placement_Without_Allocation, 1000000);
 }
 
 Registry::~Registry()

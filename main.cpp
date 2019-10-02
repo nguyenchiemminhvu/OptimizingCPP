@@ -9,8 +9,8 @@ int main(int argc, char *argv[])
     InitRegistry();
 
     PerformanceTest::run(
-		10000,
-        stringify(Ex::Input_And_Output::Reading_Files)
+		1000000,
+        stringify(Ex::Memory_Management::_1_Placement_Without_Allocation)
     );
 
 	/////////////////////////////////////////////////////
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	//{
 	//	PerformanceTest::run(
 	//		keys[i]
-	//	);
+	//);
 
 	//	system("pause");
 	//}
