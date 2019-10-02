@@ -37,5 +37,18 @@ namespace Ex
 				p_foo = nullptr;
 			}
 		}
+
+		namespace _2_Custom_Memory_Manager
+		{
+			__NORMAL_FUNCTION
+			{
+
+			}
+
+			__OPTIMIZED_FUNCTION__
+			{
+
+			}
+		}
 	}
 }
