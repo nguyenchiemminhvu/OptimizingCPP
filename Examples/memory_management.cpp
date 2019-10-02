@@ -37,33 +37,5 @@ namespace Ex
 				p_foo = nullptr;
 			}
 		}
-
-		namespace _2_Explicitly_Call_Destructor
-		{
-			class Foo
-			{
-				int value;
-			public:
-				Foo() {}
-				Foo(int n) { value = n; }
-				~Foo() {}
-			};
-
-			__NORMAL_FUNCTION
-			{
-				Foo *p_foo = new Foo(123);
-
-				delete p_foo;
-				p_foo = nullptr;
-			}
-
-			__OPTIMIZED_FUNCTION__
-			{
-				Foo *p_foo = new Foo(123);
-
-				p_foo->~Foo();
-				p_foo = nullptr;
-			}
-		}
 	}
 }
