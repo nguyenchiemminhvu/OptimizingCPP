@@ -195,7 +195,7 @@ namespace Ex
 			__DECLARE_FUNCTIONS_FOR_TEST
 		}
 
-		namespace _2_Custom_Memory_Manager
+		namespace _2_Use_C_Style_Allocation
 		{
 			__DECLARE_FUNCTIONS_FOR_TEST
 		}

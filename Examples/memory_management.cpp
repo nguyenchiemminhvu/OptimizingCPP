@@ -38,16 +38,38 @@ namespace Ex
 			}
 		}
 
-		namespace _2_Custom_Memory_Manager
+		namespace _2_Use_C_Style_Allocation
 		{
+			class Test_1
+			{
+			public:
+				
+			};
+
+			class Test_2
+			{
+			public:
+				void * operator new (size_t size)
+				{
+					return malloc(size);
+				}
+
+				void operator delete (void *p)
+				{
+					free(p);
+				}
+			};
+
 			__NORMAL_FUNCTION
 			{
-
+				Test_1 *p = new Test_1;
+				delete p;
 			}
 
 			__OPTIMIZED_FUNCTION__
 			{
-
+				Test_2 *p = new Test_2;
+				delete p;
 			}
 		}
 	}
