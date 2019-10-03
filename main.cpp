@@ -9,8 +9,8 @@ int main(int argc, char *argv[])
     InitRegistry();
 
     PerformanceTest::run(
-		10000000,
-        stringify(Ex::Memory_Management::_2_Use_C_Style_Allocation)
+		1000000,
+        stringify(Ex::Memory_Management::_3_Customize_Memory_Manager)
     );
 
 	/////////////////////////////////////////////////////

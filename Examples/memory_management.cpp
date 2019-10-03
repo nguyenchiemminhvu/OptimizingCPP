@@ -72,5 +72,18 @@ namespace Ex
 				delete p;
 			}
 		}
+
+		namespace _3_Customize_Memory_Manager
+		{
+			__NORMAL_FUNCTION
+			{
+
+			}
+
+			__OPTIMIZED_FUNCTION__
+			{
+
+			}
+		}
 	}
 }
