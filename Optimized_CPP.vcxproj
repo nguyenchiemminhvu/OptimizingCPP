@@ -110,6 +110,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CustomAllocators\Allocator.cpp" />
+    <ClCompile Include="CustomAllocators\BlockAllocator.cpp" />
+    <ClCompile Include="CustomAllocators\BlockAllocatorProxy.cpp" />
+    <ClCompile Include="CustomAllocators\DynamicLinearAllocator.cpp" />
+    <ClCompile Include="CustomAllocators\EndAllocator.cpp" />
+    <ClCompile Include="CustomAllocators\FixedLinearAllocator.cpp" />
+    <ClCompile Include="CustomAllocators\FreeListAllocator.cpp" />
+    <ClCompile Include="CustomAllocators\LinearAllocator.cpp" />
+    <ClCompile Include="CustomAllocators\ProxyAllocator.cpp" />
+    <ClCompile Include="CustomAllocators\SmallBlockAllocator.cpp" />
     <ClCompile Include="Examples\bitwise.cpp" />
     <ClCompile Include="Examples\criticalstatements.cpp" />
     <ClCompile Include="Examples\datastructures.cpp" />
@@ -124,6 +134,25 @@
     <ClCompile Include="timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CustomAllocators\Allocator.h" />
+    <ClInclude Include="CustomAllocators\AllocatorProxy.h" />
+    <ClInclude Include="CustomAllocators\AquaTypes.h" />
+    <ClInclude Include="CustomAllocators\BlockAllocator.h" />
+    <ClInclude Include="CustomAllocators\BlockAllocatorProxy.h" />
+    <ClInclude Include="CustomAllocators\Debug.h" />
+    <ClInclude Include="CustomAllocators\DynamicLinearAllocator.h" />
+    <ClInclude Include="CustomAllocators\EndAllocator.h" />
+    <ClInclude Include="CustomAllocators\FixedLinearAllocator.h" />
+    <ClInclude Include="CustomAllocators\FreeListAllocator.h" />
+    <ClInclude Include="CustomAllocators\LinearAllocator.h" />
+    <ClInclude Include="CustomAllocators\PointerMath.h" />
+    <ClInclude Include="CustomAllocators\ProxyAllocator.h" />
+    <ClInclude Include="CustomAllocators\ScopeStack.h" />
+    <ClInclude Include="CustomAllocators\SmallBlockAllocator.h" />
+    <ClInclude Include="CustomContainers\Array.h" />
+    <ClInclude Include="CustomContainers\HashMap.h" />
+    <ClInclude Include="CustomContainers\Pool.h" />
+    <ClInclude Include="CustomContainers\Queue.h" />
     <ClInclude Include="Examples\examples.h" />
     <ClInclude Include="performancetest.h" />
     <ClInclude Include="randomgenerator.h" />

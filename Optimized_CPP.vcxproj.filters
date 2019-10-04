@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="CustomAllocators">
+      <UniqueIdentifier>{fe05d70f-eb8c-43a9-b6b4-6f45971cd6e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CustomContainers">
+      <UniqueIdentifier>{ad1df876-c7e6-4447-a4c3-53de8e9000c0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -51,6 +57,36 @@
     <ClCompile Include="Examples\memory_management.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CustomAllocators\Allocator.cpp">
+      <Filter>CustomAllocators</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAllocators\BlockAllocator.cpp">
+      <Filter>CustomAllocators</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAllocators\BlockAllocatorProxy.cpp">
+      <Filter>CustomAllocators</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAllocators\DynamicLinearAllocator.cpp">
+      <Filter>CustomAllocators</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAllocators\EndAllocator.cpp">
+      <Filter>CustomAllocators</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAllocators\FixedLinearAllocator.cpp">
+      <Filter>CustomAllocators</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAllocators\FreeListAllocator.cpp">
+      <Filter>CustomAllocators</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAllocators\LinearAllocator.cpp">
+      <Filter>CustomAllocators</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAllocators\ProxyAllocator.cpp">
+      <Filter>CustomAllocators</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomAllocators\SmallBlockAllocator.cpp">
+      <Filter>CustomAllocators</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="performancetest.h">
@@ -67,6 +103,63 @@
     </ClInclude>
     <ClInclude Include="Examples\examples.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\Allocator.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\AllocatorProxy.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\AquaTypes.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\BlockAllocator.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\BlockAllocatorProxy.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\Debug.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\DynamicLinearAllocator.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\EndAllocator.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\FixedLinearAllocator.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\FreeListAllocator.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\LinearAllocator.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\PointerMath.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\ProxyAllocator.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\ScopeStack.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\SmallBlockAllocator.h">
+      <Filter>CustomAllocators</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomContainers\Array.h">
+      <Filter>CustomContainers</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomContainers\HashMap.h">
+      <Filter>CustomContainers</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomContainers\Pool.h">
+      <Filter>CustomContainers</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomContainers\Queue.h">
+      <Filter>CustomContainers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
