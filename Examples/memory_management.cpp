@@ -94,7 +94,7 @@ namespace Ex
 				delete p;
 			}
 
-			size_t					memory_size = 1024;
+			size_t					memory_size = 1024 * sizeof(int);
 			void*                   _memory = malloc(memory_size);
 			Allocator*              _main_allocator = new (_memory)FreeListAllocator(memory_size - sizeof(FreeListAllocator), pointer_math::add(_memory, sizeof(FreeListAllocator)));
 
