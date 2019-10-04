@@ -5,6 +5,9 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <memory>
+#include <vector>
+#include "../randomgenerator.h"
 
 namespace Ex
 {
@@ -73,16 +76,16 @@ namespace Ex
 			}
 		}
 
-		namespace _3_Customize_Memory_Manager
+		namespace _3_Custom_Allocator
 		{
 			__NORMAL_FUNCTION
 			{
-
+				
 			}
 
 			__OPTIMIZED_FUNCTION__
 			{
-
+				
 			}
 		}
 	}

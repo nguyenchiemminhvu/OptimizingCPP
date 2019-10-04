@@ -205,7 +205,7 @@ Registry::Registry()
 
 	REGISTER(Ex::Memory_Management::_1_Placement_Without_Allocation, 1000000);
 	REGISTER(Ex::Memory_Management::_2_Use_C_Style_Allocation, 10000000);
-	REGISTER(Ex::Memory_Management::_3_Customize_Memory_Manager, 1000000);
+	REGISTER(Ex::Memory_Management::_3_Custom_Allocator, 1000000);
 }
 
 Registry::~Registry()

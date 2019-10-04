@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     PerformanceTest::run(
 		1000000,
-        stringify(Ex::Memory_Management::_3_Customize_Memory_Manager)
+        stringify(Ex::Memory_Management::_3_Custom_Allocator)
     );
 
 	/////////////////////////////////////////////////////

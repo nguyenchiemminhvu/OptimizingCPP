@@ -200,7 +200,7 @@ namespace Ex
 			__DECLARE_FUNCTIONS_FOR_TEST
 		}
 
-		namespace _3_Customize_Memory_Manager
+		namespace _3_Custom_Allocator
 		{
 			__DECLARE_FUNCTIONS_FOR_TEST
 		}
