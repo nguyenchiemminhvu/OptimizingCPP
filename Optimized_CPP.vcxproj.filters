@@ -110,9 +110,6 @@
     <ClInclude Include="CustomAllocators\AllocatorProxy.h">
       <Filter>CustomAllocators</Filter>
     </ClInclude>
-    <ClInclude Include="CustomAllocators\AquaTypes.h">
-      <Filter>CustomAllocators</Filter>
-    </ClInclude>
     <ClInclude Include="CustomAllocators\BlockAllocator.h">
       <Filter>CustomAllocators</Filter>
     </ClInclude>
@@ -160,6 +157,9 @@
     </ClInclude>
     <ClInclude Include="CustomContainers\Queue.h">
       <Filter>CustomContainers</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomAllocators\CustomTypes.h">
+      <Filter>CustomAllocators</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

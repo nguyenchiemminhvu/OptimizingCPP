@@ -2,7 +2,7 @@
 
 #include "Array.h"
 
-#include "..\..\AquaTypes.h"
+#include "..\..\CustomTypes.h"
 
 namespace aqua
 {

@@ -6,7 +6,7 @@
 
 #include "Allocator.h"
 
-#include "../CustomAllocators/AquaTypes.h"
+#include "../CustomAllocators/CustomTypes.h"
 
 // POSSIBLE ISSUES:
 // -	Since the size of each allocation is NUM_BLOCKS * BLOCK_SIZE + _header_size, if the user allocates

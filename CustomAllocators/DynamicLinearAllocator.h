@@ -6,7 +6,7 @@
 
 #include "LinearAllocator.h"
 
-#include "..\CustomAllocators\AquaTypes.h"
+#include "..\CustomAllocators\CustomTypes.h"
 
 /*
 	TODO: Remove getStart() from LinearAllocator

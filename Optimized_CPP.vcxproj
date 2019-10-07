@@ -136,7 +136,7 @@
   <ItemGroup>
     <ClInclude Include="CustomAllocators\Allocator.h" />
     <ClInclude Include="CustomAllocators\AllocatorProxy.h" />
-    <ClInclude Include="CustomAllocators\AquaTypes.h" />
+    <ClInclude Include="CustomAllocators\CustomTypes.h" />
     <ClInclude Include="CustomAllocators\BlockAllocator.h" />
     <ClInclude Include="CustomAllocators\BlockAllocatorProxy.h" />
     <ClInclude Include="CustomAllocators\Debug.h" />
