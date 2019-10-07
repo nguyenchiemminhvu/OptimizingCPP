@@ -180,7 +180,6 @@ Registry::Registry()
     REGISTER(Ex::CriticalStatements::_2_Control_Flows::_2_Prefer_Virtual_Function, 10000000);
     REGISTER(Ex::CriticalStatements::_3_Loops::_1_Cache_The_Loop_Value, 1000000);
     REGISTER(Ex::CriticalStatements::_3_Loops::_2_Count_Down_Instead_Of_Up, 10000000);
-    REGISTER(Ex::CriticalStatements::_3_Loops::_3_Remove_Hidden_Function_Call, 10000000);
     REGISTER(Ex::CriticalStatements::_4_Functions::_1_Grouping_Function_Arguments, 10000000);
     REGISTER(Ex::CriticalStatements::_4_Functions::_2_Prefer_Return_Value_As_Output_Parameters, 10000000);
 

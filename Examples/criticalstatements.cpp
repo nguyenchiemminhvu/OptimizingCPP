@@ -15,30 +15,32 @@ namespace Ex
         {
             namespace _1_Group_Constants_Together
             {
+				int days = 0, seconds = 0;
                 __NORMAL_FUNCTION
                 {
-                    int days = 1000;
-                    int seconds = 24 * days * 60 * 60;
+                    days = 1000;
+                    seconds = 24 * days * 60 * 60;
                 }
 
                 __OPTIMIZED_FUNCTION__
                 {
-                    int days = 1000;
-                    int seconds = days * 24 * 60 * 60;
+                    days = 1000;
+                    seconds = days * 86400;
                 }
             }
 
             namespace _2_Use_LessExpensive_Operators
             {
+				int x = 0;
                 __NORMAL_FUNCTION
                 {
-                    int x = 100;
+                    x = 100;
                     x = x * 9;
                 }
 
                 __OPTIMIZED_FUNCTION__
                 {
-                    int x = 100;
+                    x = 100;
                     x = x << 3 + x;
                 }
             }
@@ -234,29 +236,6 @@ namespace Ex
                         if (s[i] == ' ')
                             s[i] = '_';
                     }
-                }
-            }
-
-            namespace _3_Remove_Hidden_Function_Call
-            {
-                __NORMAL_FUNCTION
-                {
-                    for (int i = 0; i < 3; i++)
-                    {
-                        std::string s("<p>");
-                        s += "</p>";
-                    }
-                }
-
-                __OPTIMIZED_FUNCTION__
-                {
-                    std::string s;
-                    for (int i = 0; i < 3; i++)
-                    {
-                        s += "<p>";
-                        s += "</p>";
-                    }
-
                 }
             }
         }

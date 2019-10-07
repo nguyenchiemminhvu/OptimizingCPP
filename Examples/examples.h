@@ -73,11 +73,6 @@ namespace Ex
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
-
-            namespace _3_Remove_Hidden_Function_Call
-            {
-                __DECLARE_FUNCTIONS_FOR_TEST
-            }
         }
 
         namespace _4_Functions
