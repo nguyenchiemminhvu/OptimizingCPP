@@ -77,15 +77,15 @@ namespace Ex
 
         namespace _4_Functions
         {
-            namespace _1_Grouping_Function_Arguments
+            namespace _1_Prefer_Return_Value_As_Output_Parameters
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
 
-            namespace _2_Prefer_Return_Value_As_Output_Parameters
-            {
-                __DECLARE_FUNCTIONS_FOR_TEST
-            }
+			namespace _2_Function_or_Functor_or_Lambda
+			{
+				__DECLARE_FUNCTIONS_FOR_TEST
+			}
         }
     }
 

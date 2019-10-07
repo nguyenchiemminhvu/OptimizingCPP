@@ -1,4 +1,5 @@
 #include "examples.h"
+#include "../randomgenerator.h"
 
 #include <time.h>
 #include <math.h>
@@ -6,6 +7,7 @@
 #include <string.h>
 #include <string>
 #include <algorithm>
+#include <vector>
 
 namespace Ex
 {
@@ -171,21 +173,17 @@ namespace Ex
                     }
                 };
 
+				Dog d;
+				Cat c;
                 __NORMAL_FUNCTION
-                {
-                    Dog d;
+                { 
                     d.speak();
-
-                    Cat c;
                     c.speak();
                 }
 
                 __OPTIMIZED_FUNCTION__
                 {
-                    Dog d;
                     d.virtualSpeak();
-
-                    Cat c;
                     c.virtualSpeak();
                 }
             }
@@ -242,39 +240,7 @@ namespace Ex
 
         namespace _4_Functions
         {
-            namespace _1_Grouping_Function_Arguments
-            {
-                struct S
-                {
-                    int i;
-                    int a1, a2, a3, a4, a5, a6, a7, a8;
-                };
-
-                int i, a1, a2, a3, a4, a5, a6, a7, a8;
-                S c;
-
-                void f1(int &i, int &a1, int &a2, int &a3, int &a4, int &a5, int &a6, int &a7, int &a8)
-                {
-
-                }
-
-                void f2(const S &c)
-                {
-
-                }
-
-                __NORMAL_FUNCTION
-                {
-                    f1(i, a1, a2, a3, a4, a5, a6, a7, a8);
-                }
-
-                __OPTIMIZED_FUNCTION__
-                {
-                    f2(c);
-                }
-            }
-
-            namespace _2_Prefer_Return_Value_As_Output_Parameters
+            namespace _1_Prefer_Return_Value_As_Output_Parameters
             {
                 struct S
                 {
@@ -294,17 +260,71 @@ namespace Ex
                     s.b = b;
                 }
 
+				S s;
+
                 __NORMAL_FUNCTION
                 {
-                    S s = f1(1, 2);
+                    s = f1(1, 2);
                 }
 
                 __OPTIMIZED_FUNCTION__
                 {
-                    S s;
                     f2(s, 1, 2);
                 }
             }
+
+			namespace _2_Function_or_Functor_or_Lambda
+			{
+				struct S
+				{
+					int _a, _b;
+					S(int a, int b) { _a = a; _b = b; }
+				};
+				std::vector<S> createVec()
+				{
+					std::vector<S> _vec;
+					_vec.reserve(30);
+					for (int i = 0; i < 30; i++)
+					{
+						_vec.push_back(S(RANDOM(), RANDOM()));
+					}
+					return _vec;
+				}
+
+				std::vector<S> temp = createVec();
+				std::vector<S> vec_1, vec_2, vec_3;
+
+				bool compare(const S &s1, const S s2)
+				{
+					return s1._a < s2._a;
+				}
+
+				__NORMAL_FUNCTION
+				{
+					vec_1 = temp;
+					std::sort(vec_1.begin(), vec_1.begin(), compare);
+				}
+
+				struct Compare
+				{
+					bool operator() (const S &s1, const S &s2)
+					{
+						return s1._a < s2._a;
+					}
+				};
+
+				__OPTIMIZED_FUNCTION__
+				{
+					vec_2 = temp;
+					std::sort(vec_1.begin(), vec_1.begin(), Compare());
+				}
+
+				__OPTIMIZED_FUNCTION_1
+				{
+					vec_3 = temp;
+					std::sort(vec_1.begin(), vec_1.begin(), [](const S &s1, const S &s2) -> bool {return s1._a < s2._a;});
+				}
+			}
         }
     }
 }
