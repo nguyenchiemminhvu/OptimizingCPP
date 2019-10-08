@@ -17,43 +17,41 @@ namespace Ex
         {
             namespace _1_Group_Constants_Together
             {
-				int days = 0, seconds = 0;
+				int days = 100, seconds = 0;
                 __NORMAL_FUNCTION
                 {
-                    days = 1000;
                     seconds = 24 * days * 60 * 60;
                 }
 
+				const int day_to_second = 86400;
                 __OPTIMIZED_FUNCTION__
                 {
-                    days = 1000;
-                    seconds = days * 86400;
+                    seconds = days * day_to_second;
                 }
             }
 
             namespace _2_Use_LessExpensive_Operators
             {
-				int x = 0;
+				int r = 0;
+				int x = 100;
                 __NORMAL_FUNCTION
                 {
-                    x = 100;
-                    x = x * 9;
+                    r = x * 9;
                 }
 
                 __OPTIMIZED_FUNCTION__
                 {
-                    x = 100;
-                    x = x << 3 + x;
+                    r = x << 3 + x;
                 }
             }
 
-            namespace _3_Rounding_Integer_Division
+            namespace _3_Use_Integer_Instead_Of_Float
             {
                 __NORMAL_FUNCTION
                 {
                     unsigned int numerator = 100;
                     unsigned int denominator = 10;
-                    unsigned int test = (unsigned int)round((double)numerator / denominator);
+                    unsigned int test = (unsigned int)round((float)numerator / denominator);
                 }
 
                 __OPTIMIZED_FUNCTION__
@@ -72,21 +70,6 @@ namespace Ex
                     unsigned int denominator = 10;
 
                     unsigned int test = (numerator + (denominator >> 1)) / denominator;
-                }
-            }
-
-            namespace _4_Double_Maybe_Better_Than_Float
-            {
-                __NORMAL_FUNCTION
-                {
-                    double d = 0, t = 0, a = -9.8f, v0 = 0.0f, d0 = 100.0f;
-                    d = a*t*t + v0*t + d0;
-                }
-
-                __OPTIMIZED_FUNCTION__
-                {
-                    float d = 0, t = 0, a = -9.8f, v0 = 0.0f, d0 = 100.0f;
-                    d = a*t*t + v0*t + d0;
                 }
             }
         }

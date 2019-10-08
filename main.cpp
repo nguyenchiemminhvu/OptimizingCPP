@@ -9,8 +9,8 @@ int main(int argc, char *argv[])
     InitRegistry();
 
     PerformanceTest::run(
-		10000000,
-        stringify(Ex::CriticalStatements::_4_Functions::_2_Function_or_Functor_or_Lambda)
+		100000000,
+        stringify(Ex::CriticalStatements::_2_Control_Flows::_1_Prefer_Switch_To_Compare_Integer)
     );
 
 	/////////////////////////////////////////////////////

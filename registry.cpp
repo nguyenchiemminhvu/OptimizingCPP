@@ -174,8 +174,7 @@ Registry::Registry()
 
     REGISTER(Ex::CriticalStatements::_1_Expressions::_1_Group_Constants_Together, 10000000);
     REGISTER(Ex::CriticalStatements::_1_Expressions::_2_Use_LessExpensive_Operators, 10000000);
-    REGISTER_1(Ex::CriticalStatements::_1_Expressions::_3_Rounding_Integer_Division, 10000000);
-    REGISTER(Ex::CriticalStatements::_1_Expressions::_4_Double_Maybe_Better_Than_Float, 10000000);
+    REGISTER_1(Ex::CriticalStatements::_1_Expressions::_3_Use_Integer_Instead_Of_Float, 10000000);
     REGISTER(Ex::CriticalStatements::_2_Control_Flows::_1_Prefer_Switch_To_Compare_Integer, 10000000);
     REGISTER(Ex::CriticalStatements::_2_Control_Flows::_2_Prefer_Virtual_Function, 10000000);
     REGISTER(Ex::CriticalStatements::_3_Loops::_1_Cache_The_Loop_Value, 1000000);

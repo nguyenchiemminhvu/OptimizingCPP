@@ -38,12 +38,7 @@ namespace Ex
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
 
-            namespace _3_Rounding_Integer_Division
-            {
-                __DECLARE_FUNCTIONS_FOR_TEST
-            }
-
-            namespace _4_Double_Maybe_Better_Than_Float
+            namespace _3_Use_Integer_Instead_Of_Float
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
