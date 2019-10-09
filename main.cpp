@@ -9,8 +9,8 @@ int main(int argc, char *argv[])
     InitRegistry();
 
     PerformanceTest::run(
-		100000000,
-        stringify(Ex::CriticalStatements::_2_Control_Flows::_1_Prefer_Switch_To_Compare_Integer)
+		1000000,
+        stringify(Ex::Strings::_1_First_Attempt::_1_Eliminate_Temporary_String_Objects)
     );
 
 	/////////////////////////////////////////////////////

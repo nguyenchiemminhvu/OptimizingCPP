@@ -108,11 +108,12 @@ namespace Ex
             {
                 class Animal
                 {
+				protected:
+					int _animalType;
+
                 public:
 
                     enum AnimalType { DOG, CAT };
-
-                    int _animalType;
 
                     Animal() { }
 
@@ -219,6 +220,30 @@ namespace Ex
                     }
                 }
             }
+
+			namespace _3_More_Efficient_Loop
+			{
+				__NORMAL_FUNCTION
+				{
+					char s[] = "This string has many space chars";
+					for (size_t i = 0, len = strlen(s); i < len; i++)
+					{
+						if (s[i] == ' ')
+							s[i] = '_';
+					}
+				}
+
+				__OPTIMIZED_FUNCTION__
+				{
+					char s[] = "This string has many space chars";
+					size_t i = 0, len = strlen(s);
+					do {
+						if (s[i] == ' ')
+							s[i] = '_';
+						++i;
+					} while (i < len);
+				}
+			}
         }
 
         namespace _4_Functions
@@ -239,19 +264,18 @@ namespace Ex
 
                 void f2(S &s, int a, int b)
                 {
-                    s.a = a;
-                    s.b = b;
+					s = S(a, b);
                 }
-
-				S s;
 
                 __NORMAL_FUNCTION
                 {
+					S s;
                     s = f1(1, 2);
                 }
 
                 __OPTIMIZED_FUNCTION__
                 {
+					S s;
                     f2(s, 1, 2);
                 }
             }
@@ -263,6 +287,7 @@ namespace Ex
 					int _a, _b;
 					S(int a, int b) { _a = a; _b = b; }
 				};
+
 				std::vector<S> createVec()
 				{
 					std::vector<S> _vec;
@@ -299,13 +324,13 @@ namespace Ex
 				__OPTIMIZED_FUNCTION__
 				{
 					vec_2 = temp;
-					std::sort(vec_1.begin(), vec_1.begin(), Compare());
+					std::sort(vec_2.begin(), vec_2.begin(), Compare());
 				}
 
 				__OPTIMIZED_FUNCTION_1
 				{
 					vec_3 = temp;
-					std::sort(vec_1.begin(), vec_1.begin(), [](const S &s1, const S &s2) -> bool {return s1._a < s2._a;});
+					std::sort(vec_3.begin(), vec_3.begin(), [](const S &s1, const S &s2) -> bool {return s1._a < s2._a;});
 				}
 			}
         }

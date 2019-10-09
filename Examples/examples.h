@@ -68,6 +68,11 @@ namespace Ex
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
+
+			namespace _3_More_Efficient_Loop
+			{
+				__DECLARE_FUNCTIONS_FOR_TEST
+			}
         }
 
         namespace _4_Functions
