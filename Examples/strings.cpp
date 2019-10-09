@@ -63,7 +63,6 @@ namespace Ex
                 std::string remove_space(std::string s)
                 {
                     std::string result;
-                    result.reserve(s.length());
                     for (int i = 0; i < s.length(); i++)
                     {
 						if (s[i] != ' ')
@@ -105,25 +104,22 @@ namespace Ex
 			namespace Use_Character_Arrays_Instead_Of_String
 			{
 				std::string temp = "a b c d e";
-				std::string s1;
-				char *s2 = new char[temp.length()];
+				char *s = new char[temp.length()];
 
-				void remove_space_non_return(std::string &s, const std::string &temp)
+				std::string remove_space(std::string s)
 				{
-					s.clear();
-					s.reserve(temp.length());
-					for (int i = 0; i < temp.length(); i++)
+					std::string result;
+					for (int i = 0; i < s.length(); i++)
 					{
 						if (s[i] != ' ')
-						{
-							s += temp[i];
-						}
+							result = result + s[i];
 					}
+					return result;
 				}
 
 				__NORMAL_FUNCTION
 				{
-					remove_space_non_return(s1, temp);
+					remove_space(temp);
 				}
 
 				void remove_space_cstrings(char *des, const char *src, size_t size)
@@ -140,7 +136,7 @@ namespace Ex
 
 				__OPTIMIZED_FUNCTION__
 				{
-					remove_space_cstrings(s2, temp.data(), temp.length());
+					remove_space_cstrings(s, temp.data(), temp.length());
 				}
 			}
         }
