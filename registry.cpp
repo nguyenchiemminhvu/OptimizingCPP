@@ -183,13 +183,9 @@ Registry::Registry()
     REGISTER(Ex::CriticalStatements::_4_Functions::_1_Prefer_Return_Value_As_Output_Parameters, 100000000);
     REGISTER_1(Ex::CriticalStatements::_4_Functions::_2_Function_or_Functor_or_Lambda, 10000000);
 
-    REGISTER(Ex::Bitwise::_1_Check_Power_Of_Two, 10000000);
-    REGISTER(Ex::Bitwise::_2_Add_One, 10000000);
-
-    REGISTER(Ex::Strings::_1_First_Attempt::_1_Eliminate_Temporary_String_Objects, 1000000);
-    REGISTER(Ex::Strings::_1_First_Attempt::_2_Eliminate_Return_String_Value, 1000000);
-    REGISTER_1(Ex::Strings::_2_Second_Attempt::_1_Use_Better_Algorithm, 1000000);
-    REGISTER(Ex::Strings::_3_Use_Character_Arrays_Instead_Of_String, 1000000);
+    REGISTER(Ex::Strings::_1_First_Attempt::Eliminate_Temporary_String_Objects, 1000000);
+    REGISTER(Ex::Strings::_2_Second_Attempt::Use_Better_Algorithm, 1000000);
+    REGISTER(Ex::Strings::_3_Third_Attempt::Use_Character_Arrays_Instead_Of_String, 1000000);
 
     REGISTER(Ex::Searching::_1_Change_Data_Structure_Representing_Keys, 1000000);
     REGISTER(Ex::Searching::_2_Search_In_Sequence_Container, 1000000);

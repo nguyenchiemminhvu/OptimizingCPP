@@ -89,29 +89,11 @@ namespace Ex
         }
     }
 
-    namespace Bitwise
-    {
-        namespace _1_Check_Power_Of_Two
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
-
-        namespace _2_Add_One
-        {
-            __DECLARE_FUNCTIONS_FOR_TEST
-        }
-    }
-
     namespace Strings
     {
         namespace _1_First_Attempt
         {
-            namespace _1_Eliminate_Temporary_String_Objects
-            {
-                __DECLARE_FUNCTIONS_FOR_TEST
-            }
-
-            namespace _2_Eliminate_Return_String_Value
+            namespace Eliminate_Temporary_String_Objects
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
@@ -119,15 +101,18 @@ namespace Ex
 
         namespace _2_Second_Attempt
         {
-            namespace _1_Use_Better_Algorithm
+            namespace Use_Better_Algorithm
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
         }
 
-        namespace _3_Use_Character_Arrays_Instead_Of_String
+        namespace _3_Third_Attempt
         {
-            __DECLARE_FUNCTIONS_FOR_TEST
+			namespace Use_Character_Arrays_Instead_Of_String
+			{
+				__DECLARE_FUNCTIONS_FOR_TEST
+			}
         }
     }
 

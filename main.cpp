@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     PerformanceTest::run(
 		1000000,
-        stringify(Ex::Strings::_1_First_Attempt::_1_Eliminate_Temporary_String_Objects)
+        stringify(Ex::Strings::_2_Second_Attempt::Use_Better_Algorithm)
     );
 
 	/////////////////////////////////////////////////////

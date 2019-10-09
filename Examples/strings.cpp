@@ -12,16 +12,16 @@ namespace Ex
     {
         namespace _1_First_Attempt
         {
-            namespace _1_Eliminate_Temporary_String_Objects
+            namespace Eliminate_Temporary_String_Objects
             {
                 std::string temp = "a b c d e";
 
-                std::string remove_ctrl(std::string s)
+                std::string remove_space(std::string s)
                 {
                     std::string result;
                     for (int i = 0; i < s.length(); i++)
                     {
-                        if (s[i] >= 0x20)
+                        if (s[i] != ' ')
                             result = result + s[i];
                     }
                     return result;
@@ -29,16 +29,16 @@ namespace Ex
 
                 __NORMAL_FUNCTION
                 {
-                    std::string s = remove_ctrl(temp);
+                    std::string s = remove_space(temp);
                 }
 
-                std::string remove_ctrl_2(std::string &s)
+                std::string remove_space_mutating(std::string &s)
                 {
                     std::string result;
-                    result.reserve(s.length());
+					result.reserve(s.length());
                     for (int i = 0; i < s.length(); i++)
                     {
-                        if (s[i] >= 0x20)
+						if (s[i] != ' ')
                         {
                             result += s[i];
                         }
@@ -49,67 +49,24 @@ namespace Ex
 
                 __OPTIMIZED_FUNCTION__
                 {
-                    std::string s = remove_ctrl_2(temp);
-                }
-            }
-
-            namespace _2_Eliminate_Return_String_Value
-            {
-                std::string temp = "a b c d e";
-
-                std::string remove_ctrl_2(std::string &s)
-                {
-                    std::string result;
-                    result.reserve(s.length());
-                    for (int i = 0; i < s.length(); i++)
-                    {
-                        if (s[i] >= 0x20)
-                        {
-                            result += s[i];
-                        }
-                    }
-                    return result;
-                }
-
-                __NORMAL_FUNCTION
-                {
-                    std::string s = remove_ctrl_2(temp);
-                }
-
-                void remove_ctrl_non_return(std::string &s, const std::string &temp)
-                {
-                    s.clear();
-                    s.reserve(temp.length());
-                    for (int i = 0; i < temp.length(); i++)
-                    {
-                        if (temp[i] >= 0x20)
-                        {
-                            s += temp[i];
-                        }
-                    }
-                }
-
-                __OPTIMIZED_FUNCTION__
-                {
-                    std::string s;
-                    remove_ctrl_non_return(s, temp);
+                    std::string s = remove_space_mutating(temp);
                 }
             }
         }
 
         namespace _2_Second_Attempt
         {
-            namespace _1_Use_Better_Algorithm
+            namespace Use_Better_Algorithm
             {
                 std::string temp = "a b c d e";
 
-                std::string remove_ctrl(std::string s)
+                std::string remove_space(std::string s)
                 {
                     std::string result;
                     result.reserve(s.length());
                     for (int i = 0; i < s.length(); i++)
                     {
-                        if (s[i] >= 0x20)
+						if (s[i] != ' ')
                             result = result + s[i];
                     }
                     return result;
@@ -117,35 +74,14 @@ namespace Ex
 
                 __NORMAL_FUNCTION
                 {
-                    std::string s = remove_ctrl(temp);
+                    std::string s = remove_space(temp);
                 }
 
-                std::string remove_ctrl_append(std::string s)
-                {
-                    std::string result;
-                    result.reserve(s.length());
-                    for (size_t i = 0, j = i; i < s.length(); i++)
-                    {
-                        for (j = i; j < s.length(); j++)
-                        {
-                            if (s[j] < 0x20)
-                                break;
-                        }
-                        result.append(s, i, j - i);
-                    }
-                    return result;
-                }
-
-                __OPTIMIZED_FUNCTION__
-                {
-                    std::string s = remove_ctrl_append(temp);
-                }
-
-                std::string remove_ctrl_erase(std::string s)
+                std::string remove_space_erase(std::string s)
                 {
                     for (size_t i = 0; i < s.length(); )
                     {
-                        if (s[i] < 0x20)
+						if (s[i] == ' ')
                         {
                             s.erase(i, 1);
                         }
@@ -157,53 +93,56 @@ namespace Ex
                     return s;
                 }
 
-                __OPTIMIZED_FUNCTION_1
+                __OPTIMIZED_FUNCTION__
                 {
-                    std::string s = remove_ctrl_erase(temp);
+                    std::string s = remove_space_erase(temp);
                 }
             }
         }
 
-        namespace _3_Use_Character_Arrays_Instead_Of_String
+        namespace _3_Third_Attempt
         {
-            std::string temp = "a b c d e";
-            std::string s1;
-            char *s2 = new char[temp.length()];
+			namespace Use_Character_Arrays_Instead_Of_String
+			{
+				std::string temp = "a b c d e";
+				std::string s1;
+				char *s2 = new char[temp.length()];
 
-            void remove_ctrl_non_return(std::string &s, const std::string &temp)
-            {
-                s.clear();
-                s.reserve(temp.length());
-                for (int i = 0; i < temp.length(); i++)
-                {
-                    if (temp[i] >= 0x20)
-                    {
-                        s += temp[i];
-                    }
-                }
-            }
+				void remove_space_non_return(std::string &s, const std::string &temp)
+				{
+					s.clear();
+					s.reserve(temp.length());
+					for (int i = 0; i < temp.length(); i++)
+					{
+						if (s[i] != ' ')
+						{
+							s += temp[i];
+						}
+					}
+				}
 
-            __NORMAL_FUNCTION
-            {
-                remove_ctrl_non_return(s1, temp);
-            }
+				__NORMAL_FUNCTION
+				{
+					remove_space_non_return(s1, temp);
+				}
 
-            void remove_ctrl_cstrings(char *des, const char *src, size_t size)
-            {
-                for (size_t i = 0; i < size; i++)
-                {
-                    if (src[i] >= 0x20)
-                    {
-                        *des++ = src[i];
-                    }
-                }
-                *des = '\0';
-            }
+				void remove_space_cstrings(char *des, const char *src, size_t size)
+				{
+					for (size_t i = 0; i < size; i++)
+					{
+						if (src[i] != ' ')
+						{
+							*des++ = src[i];
+						}
+					}
+					*des = '\0';
+				}
 
-            __OPTIMIZED_FUNCTION__
-            {
-                remove_ctrl_cstrings(s2, temp.data(), temp.length());
-            }
+				__OPTIMIZED_FUNCTION__
+				{
+					remove_space_cstrings(s2, temp.data(), temp.length());
+				}
+			}
         }
     }
 }
