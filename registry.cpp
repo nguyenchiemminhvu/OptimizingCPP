@@ -192,9 +192,8 @@ Registry::Registry()
     REGISTER(Ex::Searching::_3_Optimize_Search_In_Hashed_Tables, 1000000);
 
     REGISTER(Ex::Data_Structures::_1_Vector_And_String::_1_Reallocation, 1000000);
-    REGISTER_1(Ex::Data_Structures::_1_Vector_And_String::_2_Inserting_And_Deleting, 1000000);
-    REGISTER(Ex::Data_Structures::_1_Vector_And_String::_3_Iterating, 1000000);
-    REGISTER(Ex::Data_Structures::_2_Map, 1000000);
+    REGISTER(Ex::Data_Structures::_1_Vector_And_String::_2_Inserting_And_Deleting, 1000000);
+	REGISTER(Ex::Data_Structures::_2_Map::Inserting, 10000000);
 
 	REGISTER_2(Ex::Input_And_Output::Reading_Files, 10000);
 

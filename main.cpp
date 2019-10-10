@@ -9,8 +9,8 @@ int main(int argc, char *argv[])
     InitRegistry();
 
     PerformanceTest::run(
-		1000000,
-        stringify(Ex::Strings::_2_Second_Attempt::Use_Better_Algorithm)
+		10000000,
+        stringify(Ex::Data_Structures::_2_Map::Inserting)
     );
 
 	/////////////////////////////////////////////////////

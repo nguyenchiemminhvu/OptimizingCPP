@@ -69,35 +69,23 @@ namespace Ex
         {
             namespace _1_Reallocation
             {
-                std::vector<KeyValue> createVec_1()
-                {
-                    std::vector<KeyValue> _vec;
-                    for (int i = 0; i < 10; i++)
-                    {
-                        _vec.push_back(KeyValue(RANDOM()));
-                    }
-                    return _vec;
-                }
-
                 __NORMAL_FUNCTION
                 {
-                    std::vector<KeyValue> vec_1 = createVec_1();
-                }
-
-                std::vector<KeyValue> createVec_2()
-                {
-                    std::vector<KeyValue> _vec;
-                    _vec.reserve(10);
-                    for (int i = 0; i < 10; i++)
-                    {
-                        _vec.push_back(KeyValue(RANDOM()));
-                    }
-                    return _vec;
+					std::vector<KeyValue> vec_1;
+					for (int i = 0; i < 10; i++)
+					{
+						vec_1.push_back(KeyValue(RANDOM()));
+					}
                 }
 
                 __OPTIMIZED_FUNCTION__
                 {
-                    std::vector<KeyValue> vec_2 = createVec_2();
+					std::vector<KeyValue> vec_2;
+					vec_2.reserve(10);
+					for (int i = 0; i < 10; i++)
+					{
+						vec_2.push_back(KeyValue(RANDOM()));
+					}
                 }
             }
 
@@ -112,104 +100,65 @@ namespace Ex
                     }
                     return _vec;
                 }
+				std::vector<KeyValue> temp = createVec();
 
                 __NORMAL_FUNCTION
                 {
 					std::vector<KeyValue> vec_1;
+					vec_1.reserve(temp.size());
 					for (int i = 0; i < 10; i++)
 					{
 						vec_1.push_back(KeyValue(RANDOM()));
 					}
                 }
 
-                std::vector<KeyValue> temp = createVec();
                 __OPTIMIZED_FUNCTION__
                 {
 					std::vector<KeyValue> vec_2;
-					vec_2.reserve(temp.size());
-					for (int i = 0; i < temp.size(); i++)
-					{
-						vec_2.push_back(temp[i]);
-					}
-                }
-
-                __OPTIMIZED_FUNCTION_1
-                {
-					std::vector<KeyValue> vec_3;
-					vec_3.insert(vec_3.end(), temp.begin(), temp.end());
-                }
-            }
-
-            namespace _3_Iterating
-            {
-                std::vector<KeyValue> createVec()
-                {
-                    std::vector<KeyValue> _vec;
-                    for (int i = 0; i < 100; i++)
-                    {
-                        _vec.push_back(KeyValue(RANDOM()));
-                    }
-                    return _vec;
-                }
-
-                std::vector<KeyValue> vec_1 = createVec();
-
-                __NORMAL_FUNCTION
-                {
-                    for (std::vector<KeyValue>::iterator i = vec_1.begin(); i != vec_1.end(); i++)
-                    {
-                    }
-                }
-
-                std::vector<KeyValue> vec_2 = createVec();
-
-                __OPTIMIZED_FUNCTION__
-                {
-                    for (int i = 0; i < vec_2.size(); i++)
-                    {
-                    }
+					vec_2.insert(vec_2.end(), temp.begin(), temp.end());
                 }
             }
         }
 
         namespace _2_Map
         {
-            std::vector<KeyValue> createVec()
-            {
-                std::vector<KeyValue> _vec;
-                _vec.reserve(100);
-                for (int i = 0; i < _vec.size(); i++)
-                {
-                    _vec.push_back(KeyValue(RANDOM()));
-                }
-                return _vec;
-            }
-
-            std::vector<KeyValue> temp = createVec();
-                
-            __NORMAL_FUNCTION
-            {
-                std::map<std::string, int> map_1;
-                std::vector<KeyValue> _vec = temp;
-                for (int i = 0; i < _vec.size(); i++)
-                {
-                    map_1.insert(std::pair<std::string, int>(_vec[i]._key, _vec[i]._value));
-                }
-            }
-
-            __OPTIMIZED_FUNCTION__
-            {
-				std::map<std::string, int> map_1;
-				std::vector<KeyValue> _vec = temp;
-				for (int i = 0; i < _vec.size(); i++)
+			namespace Inserting
+			{
+				std::vector<KeyValue> createVec()
 				{
-					std::map<std::string, int>::iterator iter = map_1.lower_bound(_vec[i]._key);
-					if (iter != map_1.end())
-						map_1.insert(std::pair<std::string, int>(_vec[i]._key, _vec[i]._value));
-					else
-						iter->second = _vec[i]._value;
+					std::vector<KeyValue> _vec;
+					_vec.reserve(100);
+					for (int i = 0; i < _vec.size(); i++)
+					{
+						_vec.push_back(KeyValue(RANDOM()));
+					}
+					std::stable_sort(_vec.begin(), _vec.end(), compare_KeyValue);
+					return _vec;
 				}
-            }
+
+				std::vector<KeyValue> temp = createVec();
+
+				std::map<std::string, int> map_1;
+				std::vector<KeyValue> vec_1 = temp;
+				__NORMAL_FUNCTION
+				{
+					for (int i = 0; i < vec_1.size(); i++)
+					{
+						map_1.insert(std::pair<std::string, int>(vec_1[i]._key, vec_1[i]._value));
+					}
+				}
+
+				std::map<std::string, int> map_2;
+				std::vector<KeyValue> vec_2 = temp;
+				__OPTIMIZED_FUNCTION__
+				{
+					auto hint = map_2.end();
+					for (int i = 0; i < vec_2.size(); i++)
+					{
+						hint = map_2.insert(hint, std::pair<char *, int>(vec_2[i]._key, vec_2[i]._value));
+					}
+				}
+			}
         }
     }
 }

@@ -175,11 +175,12 @@ namespace Ex
             }
 
             std::map<std::string, int> map_1 = createMap_1();
+			std::map<std::string, int>::iterator Iter_1;
 
             __NORMAL_FUNCTION
             {
-                std::map<std::string, int>::iterator iter = map_1.find("555");
-                if (iter != map_1.end())
+                Iter_1 = map_1.find("555");
+                if (Iter_1 != map_1.end())
                 {
                     //std::cout << "found" << std::endl;
                 }
@@ -200,12 +201,13 @@ namespace Ex
                 return _map;
             }
 
-            std::unordered_map<std::string, int> map_2;
+            std::unordered_map<std::string, int> map_2 = createMap_2();
+			std::unordered_map<std::string, int>::iterator Iter_2;
 
             __OPTIMIZED_FUNCTION__
             {
-                std::unordered_map<std::string, int>::iterator iter = map_2.find("555");
-                if (iter != map_2.end())
+                Iter_2 = map_2.find("555");
+                if (Iter_2 != map_2.end())
                 {
                     //std::cout << "found" << std::endl;
                 }

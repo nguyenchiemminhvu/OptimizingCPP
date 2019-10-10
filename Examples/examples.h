@@ -147,16 +147,14 @@ namespace Ex
             {
                 __DECLARE_FUNCTIONS_FOR_TEST
             }
-
-            namespace _3_Iterating
-            {
-                __DECLARE_FUNCTIONS_FOR_TEST
-            }
         }
 
         namespace _2_Map
         {
-			__DECLARE_FUNCTIONS_FOR_TEST
+			namespace Inserting
+			{
+				__DECLARE_FUNCTIONS_FOR_TEST
+			}
         }
     }
 
