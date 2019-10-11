@@ -164,6 +164,11 @@ namespace Ex
 		{
 			__DECLARE_FUNCTIONS_FOR_TEST
 		}
+
+		namespace Writing_Files
+		{
+			__DECLARE_FUNCTIONS_FOR_TEST
+		}
     }
 
     namespace Memory_Management

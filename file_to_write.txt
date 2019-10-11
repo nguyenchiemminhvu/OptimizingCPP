@@ -1,1 +1,1 @@
-An attempt to optimize writing file
+This string will be written into file (1)
