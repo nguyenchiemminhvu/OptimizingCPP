@@ -198,9 +198,8 @@ Registry::Registry()
 	REGISTER_2(Ex::Input_And_Output::Reading_Files, 10000);
 	REGISTER(Ex::Input_And_Output::Writing_Files, 10000);
 
-	REGISTER(Ex::Memory_Management::_1_Use_C_Style_Allocation, 10000000);
-	REGISTER(Ex::Memory_Management::_2_Placement_Without_Allocation, 1000000);
-	REGISTER(Ex::Memory_Management::_3_Custom_Allocator, 1000000);
+	REGISTER(Ex::Memory_Management::_1_Placement_Without_Allocation, 1000000);
+	REGISTER(Ex::Memory_Management::_2_Custom_Allocator, 1000000);
 }
 
 Registry::~Registry()

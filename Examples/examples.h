@@ -173,17 +173,12 @@ namespace Ex
 
     namespace Memory_Management
     {
-		namespace _1_Use_C_Style_Allocation
+		namespace _1_Placement_Without_Allocation
 		{
 			__DECLARE_FUNCTIONS_FOR_TEST
 		}
 
-		namespace _2_Placement_Without_Allocation
-		{
-			__DECLARE_FUNCTIONS_FOR_TEST
-		}
-
-		namespace _3_Custom_Allocator
+		namespace _2_Custom_Allocator
 		{
 			__DECLARE_FUNCTIONS_FOR_TEST
 		}

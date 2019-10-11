@@ -24,42 +24,7 @@ namespace Ex
 {
 	namespace Memory_Management
 	{
-		namespace _1_Use_C_Style_Allocation
-		{
-			class Test_1
-			{
-			public:
-
-			};
-
-			class Test_2
-			{
-			public:
-				void * operator new (size_t size)
-				{
-					return malloc(size);
-				}
-
-				void operator delete (void *p)
-				{
-					free(p);
-				}
-			};
-
-			__NORMAL_FUNCTION
-			{
-				Test_1 *p = new Test_1;
-			delete p;
-			}
-
-				__OPTIMIZED_FUNCTION__
-			{
-				Test_2 *p = new Test_2;
-			delete p;
-			}
-		}
-
-		namespace _2_Placement_Without_Allocation
+		namespace _1_Placement_Without_Allocation
 		{
 			class Foo
 			{
@@ -87,7 +52,7 @@ namespace Ex
 			}
 		}
 
-		namespace _3_Custom_Allocator
+		namespace _2_Custom_Allocator
 		{
 			__NORMAL_FUNCTION
 			{
@@ -108,7 +73,6 @@ namespace Ex
 			__OPTIMIZED_FUNCTION__
 			{
 				int *p = allocator::allocateNew<int>(*_main_allocator);
-				*p = 1000;
 				allocator::deallocateDelete(*_main_allocator, p);
 
 				Array<int> _arr(*_main_allocator, 1000);
