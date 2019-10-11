@@ -88,6 +88,7 @@ namespace Ex
 			HANDLE hFile;
 			BOOL errorFlag;
 			std::string line_to_write = "This string will be written into file (2)\n";
+
 			__OPTIMIZED_FUNCTION__
 			{
 				hFile = CreateFile("file_to_write_2.txt", 

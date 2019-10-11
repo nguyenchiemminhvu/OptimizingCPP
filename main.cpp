@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
     PerformanceTest::run(
 		10000,
-        stringify(Ex::Input_And_Output::Reading_Files)
+        stringify(Ex::Input_And_Output::Writing_Files)
     );
 
 	/////////////////////////////////////////////////////
