@@ -2,10 +2,18 @@
 #include "Examples/examples.h"
 #include "registry.h"
 
+#include <Windows.h>
+#include <tchar.h>
+
 #define stringify(s) #s
 
 int main(int argc, char *argv[])
 {
+	if (!SetPriorityClass(GetCurrentProcess(), REALTIME_PRIORITY_CLASS))
+	{
+
+	}
+
     InitRegistry();
 
     PerformanceTest::run(
